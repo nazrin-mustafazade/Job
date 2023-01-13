@@ -1,9 +1,28 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!--
+  This example requires Tailwind CSS v2.0+
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+  This example requires some changes to your config:
+
+  ```
+  // tailwind.config.js
+  const colors = require('tailwindcss/colors')
+
+  module.exports = {
+    // ...
+    theme: {
+      extend: {
+        colors: {
+          teal: colors.teal,
+          cyan: colors.cyan,
+        },
+      },
+    },
+    plugins: [
+      // ...
+      require('tailwindcss/forms'),
+      require('tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
 
