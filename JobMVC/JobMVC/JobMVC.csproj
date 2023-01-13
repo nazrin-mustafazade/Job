@@ -13,10 +13,14 @@
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
     <None Remove="Models\" />
+    <None Remove="Models\EmployerModels\" />
+    <None Remove="Models\EmployeeModels\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccessLayer\" />
     <Folder Include="Models\" />
+    <Folder Include="Models\EmployerModels\" />
+    <Folder Include="Models\EmployeeModels\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.13" />
