@@ -7,7 +7,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
+=======
+    <None Remove="DataAccessLayer\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Models\" />
+    <None Remove="Models\EmployerModels\" />
+    <None Remove="Models\EmployeeModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccessLayer\" />
+    <Folder Include="Models\" />
+    <Folder Include="Models\EmployerModels\" />
+    <Folder Include="Models\EmployeeModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.13">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.13" />
+  </ItemGroup>
+>>>>>>> 8b62cba8599877d159a393b7bdd4db7f5818d395
 </Project>
