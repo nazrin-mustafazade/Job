@@ -1,11 +1,9 @@
 ﻿using System;
-namespace JobMVC.Models.EmployerModels
+namespace JobMVC.Models.EmployerModels;
+
+public class JobCategory
 {
-	public class JobCategory
-	{
-		public JobCategory()
-		{
-		}
-	}
+	public int Id { get; set; }
+	 
 }
 

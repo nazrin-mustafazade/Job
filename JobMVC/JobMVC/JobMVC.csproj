@@ -9,6 +9,7 @@
   <ItemGroup>
 
     <Folder Include="wwwroot\js\" />
+    <Folder Include="Models\Identity\" />
   </ItemGroup>
 
 
@@ -21,6 +22,8 @@
     <None Remove="Models\" />
     <None Remove="Models\EmployerModels\" />
     <None Remove="Models\EmployeeModels\" />
+    <None Remove="Models\Identity\" />
+    <None Remove="Models\BaseEntity\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccessLayer\" />
@@ -35,6 +38,8 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.13" />
+    <PackageReference Include="Npgsql" Version="6.0.8" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.8" />
   </ItemGroup>
 
 </Project>

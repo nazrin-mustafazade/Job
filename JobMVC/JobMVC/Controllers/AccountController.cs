@@ -19,7 +19,8 @@ namespace JobMVC.Controllers
         [HttpGet]
         public IActionResult RegisterEmployee()
         {
-            return View();
+            var Countries = Enum.GetNames(typeof(Country));
+            return View(Countries);
         }
 
         [HttpPost]
