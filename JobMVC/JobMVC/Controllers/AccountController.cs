@@ -8,9 +8,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JobMVC.Controllers
 {
-    public class AuthController : Controller
+    public class AccountController : Controller
     {
         [HttpPost]
+        public IActionResult RegisterEmployee(int id)
+        {
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult RegisterEmployee()
         {
             return View();
@@ -29,23 +35,16 @@ namespace JobMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult LoginEmployee()
+        public IActionResult Login(int id)
         {
             return View();
         }
 
-        [HttpPost]
-        public IActionResult LoginAdmin()
+        [HttpGet]
+        public IActionResult Login()
         {
             return View();
         }
-
-        [HttpPost]
-        public IActionResult LoginEmployer()
-        {
-            return View();
-        }
-
 
     }
 }
