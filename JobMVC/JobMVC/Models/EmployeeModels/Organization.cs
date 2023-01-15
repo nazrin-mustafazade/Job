@@ -16,6 +16,8 @@ namespace JobMVC.Models
 		public ICollection<OrganizationTitle> OrganizationTitles { get; set; }
 		public ICollection<OrganizationSkill> OrganizationSkills { get; set; }
 
+		public ICollection<EmployeeOrganization> EmployeeOrganizations { get; set; }
+
 	}
 }
 

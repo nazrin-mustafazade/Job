@@ -1,4 +1,45 @@
 ﻿<Properties StartupConfiguration="{6331B822-7E54-49EF-B670-AC6D3C3449A0}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.JobMVC PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="JobMVC/Models/Identity/AppUser.cs">
+    <Files>
+      <File FileName="JobMVC/Controllers/HomeController.cs" />
+      <File FileName="JobMVC/Controllers/AdminController.cs" />
+      <File FileName="JobMVC/Views/Home/Index.cshtml" />
+      <File FileName="JobMVC/Views/Shared/_Layout.cshtml" />
+      <File FileName="JobMVC/Models/EmployerModels/Job.cs" />
+      <File FileName="JobMVC/Models/EmployerModels/JobCategory.cs" />
+      <File FileName="JobMVC/Views/Account/Login.cshtml" />
+      <File FileName="JobMVC/DataAccessLayer/AppDbContext.cs" />
+      <File FileName="JobMVC/Models/Identity/AppUser.cs" Line="7" Column="39" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="JobMVC" expanded="True">
+            <Node name="JobMVC" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="DataAccessLayer" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Base" expanded="True" />
+                <Node name="EmployeeModels" expanded="True" />
+                <Node name="EmployerModels" expanded="True" />
+                <Node name="Identity" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.JobMVC FirstBuild="True" />
 </Properties>
