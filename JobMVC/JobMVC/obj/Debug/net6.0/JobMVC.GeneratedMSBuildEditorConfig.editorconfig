@@ -15,8 +15,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\mnezr\source\repos\Job\JobMVC\JobMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/LoginEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbkVtcGxveWVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/LoginEmployer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbkVtcGxveWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/RegisterEmployee.cshtml]
@@ -25,6 +29,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/RegisterEmployer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlckVtcGxveWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/AddCV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkQ1YuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/AddVacancy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcQWRkVmFjYW5jeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Home/Index.cshtml]

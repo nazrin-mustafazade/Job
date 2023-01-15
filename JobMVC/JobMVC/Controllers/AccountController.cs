@@ -15,7 +15,11 @@ namespace JobMVC.Controllers
         {
             return View();
         }
-
+        [HttpGet]
+        public IActionResult RegisterEmployer()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult RegisterEmployee()
         {
@@ -29,7 +33,7 @@ namespace JobMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult RegisterEmployer()
+        public IActionResult RegisterEmployer(int id)
         {
             return View();
         }
@@ -41,7 +45,13 @@ namespace JobMVC.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult LoginEmployee()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult LoginEmployer()
         {
             return View();
         }
