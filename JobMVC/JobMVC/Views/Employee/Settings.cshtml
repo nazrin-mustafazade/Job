@@ -1,0 +1,374 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" class="bg-white">
+    <body class="h-full">
+
+    <!-- Common Update -->
+    <div id="popup" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <div class="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                <div>
+                    <div class="border rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-purple-600 focus-within:border-purple-600">
+                        <input type="text" name="name" class="ring-transparent block w-full p-0 text-gray-900 ">
+                    </div>
+
+                </div>
+                <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+                    <button type="button" class="saveBtn w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm">Save</button>
+                    <button type="button" class="cancelBtn mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Update -->
+    <div id="popupPswrd" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <div class="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                <div>
+                    <div class="border rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-purple-600 focus-within:border-purple-600">
+                        <input type="password" name="password" id="password" class="focus:transparent block w-full border-0 p-0 text-gray-900 ">
+                        
+                    </div>
+                    <div class="pt-8 flex items-center">
+                        <button id="toggleBtn" type="button" class="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2"  aria-checked="false" aria-labelledby="annual-billing-label">
+                            <span id="circle" aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
+                        </button>
+                        <span class="ml-3" id="annual-billing-label">
+                            <span class="text-sm font-medium text-gray-900">Show Password </span>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+                    <button type="button" class="saveBtn w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm">Save</button>
+                    <button type="button" class="cancelBtn mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let btn = document.getElementById('toggleBtn')
+            let pswrd = document.getElementById('password')
+            let circle = document.getElementById('circle')
+            btn.addEventListener("click", function () {
+                if (btn.classList.contains('bg-gray-200')) {
+                    btn.classList.remove('bg-gray-200')
+                    btn.classList.add('bg-purple-600')
+                    circle.classList.remove('translate-x-0')
+                    circle.classList.add('translate-x-5')
+                    pswrd.type="text"
+                } else {
+                    btn.classList.add('bg-gray-200')
+                    btn.classList.remove('bg-indigo-600')
+                    circle.classList.remove('translate-x-5')
+                    circle.classList.add('translate-x-0')
+                    pswrd.type = "password"
+                }
+            })
+
+        </script>
+    </div>
+
+    <!-- Country Update -->
+    <div id="popupCount" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <div class="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                <div>
+                    <div class="border rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-purple-600 focus-within:border-purple-600">
+                        <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border-0 bg-white rounded-md shadow-sm focus:outline-none sm:text-sm">
+                            
+                            <option>Azerbaijan</option>
+                            <option>US</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+                    <button type="button" class="saveBtn w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm">Save</button>
+                    <button type="button" class="cancelBtn mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone Update -->
+    <div id="popupPhone" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <div class="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                <div>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <div class="absolute inset-y-0 left-0 flex items-center">
+                            <label for="country" class="sr-only">Country</label>
+                            <select id="country" name="country" autocomplete="country" class="focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md">
+                                <option>US</option>
+                                <option>CA</option>
+                                <option>EU</option>
+                            </select>
+                        </div>
+                        <input type="text" name="phone-number" id="phone-number" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-16 sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                </div>
+                <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+                    <button type="button" class="saveBtn w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm">Save</button>
+                    <button type="button" class="cancelBtn mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div>
+    <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+        <div class="max-w-4xl mx-auto flex flex-col xl:px-0">
+            
+            <main class="flex-1">
+                <div class="relative max-w-4xl mx-auto xl:px-0">
+                    <div class="pb-16">
+                        <h1 class="pt-8 text-3xl font-extrabold text-gray-900">Settings</h1>
+                       <div class="px-4 md:px-0">
+                            <div class="py-6">
+                              
+                                <!-- Description list with inline editing -->
+                                <div class="mt-10 divide-y divide-gray-200">
+                                    <div class="space-y-1">
+                                        <h3 class="text-lg leading-6 font-medium text-gray-900">Profile</h3>
+                                        <p class="max-w-2xl text-sm text-gray-500">This information will be displayed publicly so be careful what you share.</p>
+                                    </div>
+                                    <div class="mt-6">
+                                        <dl class="divide-y divide-gray-200">
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">First Name</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">Chelsea</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button type="button" class=" updateBtn bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">Last Name</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">Hagon</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button type="button" class=" updateBtn bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-b sm:border-gray-200">
+                                                <dt class="text-sm font-medium text-gray-500">Job title</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">Human Resources Manager</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button type="button" class="updateBtn bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:pt-5">
+                                                <dt class="text-sm font-medium text-gray-500">Photo</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">
+                                                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                                    </span>
+                                                    <span class="ml-4 flex-shrink-0 flex items-start space-x-4">
+                                                        <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-purple-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                                            <span>Update</span>
+                                                            <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                                        </label>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:pt-5">
+                                                <dt class="text-sm font-medium text-gray-500">Email</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">chelsea.hagon@example.com</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button type="button" class="updateBtn bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">Password</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">**********</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button id="updatePassBtn" type="button" class=" bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">Phone Number</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">+994 55 555 55 55</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button id="updatePhoneBtn" type="button" class="bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">Country</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">Azerbaijan</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button id="updateCounBtn" type="button" class="bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">State/Province</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">---</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button type="button" class="updateBtn bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">City</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">Baku</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button type="button" class="updateBtn bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">Street Address</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">Nizami 1</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button type="button" class="updateBtn bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">ZIP / Postal code</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">AZ 1000</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button type="button" class="updateBtn bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    let passwordBtn = document.getElementById('updatePassBtn')
+                                    let countryBtn = document.getElementById('updateCounBtn')
+                                    let phoneBtn = document.getElementById('updatePhoneBtn')
+                                    let common = document.getElementById('popup')
+                                    let pswrdPop = document.getElementById('popupPswrd')
+                                    let counPop = document.getElementById('popupCount')
+                                    let phonePop = document.getElementById('popupPhone')
+
+                                    document.querySelectorAll('.updateBtn').forEach(item => {
+                                        item.addEventListener('click', event => {
+                                            common.classList.remove('hidden')
+                                        })
+                                    })
+
+                                    document.querySelectorAll('.saveBtn').forEach(item => {
+                                        item.addEventListener('click', event => {
+                                            common.classList.add('hidden')
+                                            pswrdPop.classList.add('hidden')
+                                            counPop.classList.add('hidden')
+                                            phonePop.classList.add('hidden')
+                                        })
+                                    })
+
+                                    document.querySelectorAll('.cancelBtn').forEach(item => {
+                                        item.addEventListener('click', event => {
+                                            common.classList.add('hidden')
+                                            pswrdPop.classList.add('hidden')
+                                            counPop.classList.add('hidden')
+                                            phonePop.classList.add('hidden')
+                                        })
+                                    })
+                                    
+
+                                    passwordBtn.addEventListener("click", function () {
+                                        pswrdPop.classList.remove('hidden')
+                                        
+                                    })
+
+                                    countryBtn.addEventListener("click", function () {
+                                        counPop.classList.remove('hidden')
+                                        
+                                    })
+
+                                    phoneBtn.addEventListener("click", function () {
+                                        phonePop.classList.remove('hidden')
+
+                                    })
+
+
+                                
+                                </script>
+
+                                <div class="mt-10 divide-y divide-gray-200">
+                                    <div class="space-y-1">
+                                        <h3 class="text-lg leading-6 font-medium text-gray-900">Account</h3>
+                                        <p class="max-w-2xl text-sm text-gray-500">Manage how information is displayed on your account.</p>
+                                    </div>
+                                    <div class="mt-6">
+                                        <dl class="divide-y divide-gray-200">
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                                <dt class="text-sm font-medium text-gray-500">Language</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">English</span>
+                                                    <span class="ml-4 flex-shrink-0">
+                                                        <button type="button" class="bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:pt-5">
+                                                <dt class="text-sm font-medium text-gray-500">Date format</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <span class="flex-grow">DD-MM-YYYY</span>
+                                                    <span class="ml-4 flex-shrink-0 flex items-start space-x-4">
+                                                        <button type="button" class="bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
+                                                        <span class="text-gray-300" aria-hidden="true">|</span>
+                                                        <button type="button" class="bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Remove</button>
+                                                    </span>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:pt-5">
+                                                <dt class="text-sm font-medium text-gray-500" id="timezone-option-label">Automatic timezone</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <!-- Enabled: "bg-purple-600", Not Enabled: "bg-gray-200" -->
+                                                    <button type="button" class="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:ml-auto" role="switch" aria-checked="true" aria-labelledby="timezone-option-label">
+                                                        <!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+                                                        <span aria-hidden="true" class="translate-x-0 inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
+                                                    </button>
+                                                </dd>
+                                            </div>
+                                            <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-b sm:border-gray-200">
+                                                <dt class="text-sm font-medium text-gray-500" id="auto-update-option-label">Auto-update applicant data</dt>
+                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                    <!-- Enabled: "bg-purple-600", Not Enabled: "bg-gray-200" -->
+                                                    <button type="button" class="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:ml-auto" role="switch" aria-checked="false" aria-labelledby="auto-update-option-label">
+                                                        <!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
+                                                        <span aria-hidden="true" class="translate-x-0 inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
+                                                    </button>
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+</body>
+
+    </html>
