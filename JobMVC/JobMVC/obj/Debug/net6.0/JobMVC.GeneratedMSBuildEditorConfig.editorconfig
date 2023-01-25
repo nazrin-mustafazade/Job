@@ -8,81 +8,81 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = JobMVC
 build_property.RootNamespace = JobMVC
-build_property.ProjectDir = C:\Users\Must_eb09\Source\Repos\Job\JobMVC\JobMVC\
+build_property.ProjectDir = C:\Users\mnezr\source\repos\Job\JobMVC\JobMVC\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Must_eb09\Source\Repos\Job\JobMVC\JobMVC
+build_property.MSBuildProjectDirectory = C:\Users\mnezr\source\repos\Job\JobMVC\JobMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Account/LoginEmployee.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/LoginEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbkVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Account/LoginEmployer.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/LoginEmployer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbkVtcGxveWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Account/RegisterEmployee.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/RegisterEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlckVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Account/RegisterEmployer.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/RegisterEmployer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlckVtcGxveWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Employee/AddCV.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/AddCV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkQ1YuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Employee/Index.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Employee/Main.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/Main.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTWFpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Employee/Settings.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcU2V0dGluZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Employer/AddVacancy.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/AddVacancy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcQWRkVmFjYW5jeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Employer/Index.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Home/AboutUs.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Home/AboutUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Home/Index.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Home/Privacy.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Shared/Error.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/_ViewImports.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/_ViewStart.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Must_eb09/Source/Repos/Job/JobMVC/JobMVC/Views/Shared/_Layout.cshtml]
+[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7z09qcywgz
