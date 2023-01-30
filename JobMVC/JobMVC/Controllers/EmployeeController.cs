@@ -14,12 +14,22 @@ namespace JobMVC.Controllers
             return View();
         }
 
-        public IActionResult Main()
+        public IActionResult Vacancies()
+        {
+            return View();
+        }
+
+        public IActionResult Countries()
         {
             return View();
         }
 
         public IActionResult Settings()
+        {
+            return View();
+        }
+
+        public IActionResult DetailsVacancy()
         {
             return View();
         }
