@@ -9,6 +9,10 @@ namespace JobMVC.Controllers
             return View();
         }
 
+        public IActionResult MyCV()
+        {
+            return View();
+        }
         public IActionResult AddCV()
         {
             return View();
@@ -19,7 +23,17 @@ namespace JobMVC.Controllers
             return View();
         }
 
-        public IActionResult Countries()
+        public IActionResult Applied()
+        {
+            return View();
+        }
+
+        public IActionResult CVs()
+        {
+            return View();
+        }
+
+        public IActionResult DetailsCV()
         {
             return View();
         }
