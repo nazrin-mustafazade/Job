@@ -13,5 +13,32 @@ namespace JobMVC.Controllers
         {
             return View();
         }
+
+        public IActionResult Settings()
+        {
+            return View();
+        }
+
+
+        public IActionResult Vacancies()
+        {
+            return View();
+        }
+
+
+        public IActionResult CVs()
+        {
+            return View();
+        }
+
+        public IActionResult DetailsCV()
+        {
+            return View();
+        }
+
+        public IActionResult Applied()
+        {
+            return View();
+        }
     }
 }
