@@ -1,0 +1,174 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body class="bg-purple-100">
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <ul role="list" class=" px-8 py-16 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+            <div class="flex-1 flex flex-col p-8">
+                <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                <h3 class="mt-6 text-gray-900 text-sm font-medium">NASA</h3>
+                <dl class="mt-1 flex-grow flex flex-col justify-between">
+                    <dt class="sr-only">Job</dt>
+                    <dd class="text-gray-500 text-sm">Software Developer</dd>
+                    <dt class="sr-only">Salary</dt>
+                    <dd class="mt-3">
+                        <span class="px-2 py-1 text-green-800 text-xs font-medium bg-green-100 rounded-full">1000 azn</span>
+                    </dd>
+                </dl>
+            </div>
+            <div>
+                <div class="-mt-px flex divide-x divide-gray-200">
+                    <div class="w-0 flex-1 flex">
+                        <a asp-controller="Employer" asp-action="DetailsCV" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg">
+                            <!-- Heroicon name: solid/mail -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                            </svg>
+
+
+                            <span class="ml-3">CV</span>
+                        </a>
+                        <button type="button" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-green-700 font-medium border border-transparent rounded-bl-lg">
+                            <!-- Heroicon name: solid/mail -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                            </svg>
+
+
+                            <span class="ml-3">Accept</span>
+                        </button>
+                        <button type="button" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-red-800 font-medium border border-transparent rounded-bl-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                            </svg>
+                            <span class="ml-3">Reject</span>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+    
+        
+
+        <!-- More people... -->
+    </ul>
+
+    <div id="applyDiv" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="backDiv" class="opacity-0 ease-in duration-200 fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div id="modalDiv" class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95 ease-in duration-200 relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                <div>
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <div class="mt-3 text-center sm:mt-5">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Application successful</h3>
+                        <div class="mt-2">
+                            <p class="text-sm text-gray-500">Your application has successfully completed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 sm:mt-6">
+                    <button id="okBtn" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    let vacancyNav = document.getElementById('vacancyNav')
+    let cvNav = document.getElementById('cvNav')
+    let appliedNav = document.getElementById('appliedNav')
+    let btn2 = document.getElementById('menuBtn')
+    let diV2 = document.getElementById('mobile-menu')
+    let applyBtn = document.getElementById('applyBtn')
+    let okBtn = document.getElementById('okBtn')
+    let applyDiv = document.getElementById('applyDiv')
+    let backDiv = document.getElementById('backDiv')
+    let modalDiv = document.getElementById('modalDiv')
+    let btn = document.getElementById('userBtn')
+    let diV = document.getElementById('userDiv')
+    btn.addEventListener("click", function () {
+        if (diV.classList.contains('opacity-0', 'scale-95')) {
+            diV.classList.remove('opacity-0', 'scale-95')
+            diV.classList.add('opacity-100', 'scale-100', 'duration-100', 'ease-out', 'transform', 'transition')
+        } else {
+            diV.classList.add('opacity-0', 'scale-95', 'duration-75', 'ease-in', 'transform', 'transition')
+            diV.classList.remove('opacity-100', 'scale-100')
+        }
+    })
+    btn2.addEventListener("click", function () {
+        if (diV2.classList.contains('opacity-0', 'scale-95')) {
+            diV2.classList.remove('opacity-0', 'scale-95')
+            diV2.classList.add('opacity-100', 'scale-100', 'duration-150', 'ease-out')
+        } else {
+            diV2.classList.add('opacity-0', 'scale-95', 'duration-100', 'ease-in')
+            diV2.classList.remove('opacity-100', 'scale-100')
+        }
+    })
+
+    vacancyNav.addEventListener("click", function () {
+        vacancyNav.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
+        vacancyNav.classList.add('bg-gray-900', 'text-white')
+        cvNav.classList.remove('bg-gray-900', 'text-white')
+        cvNav.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
+        appliedNav.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
+        appliedNav.classList.remove('bg-gray-900', 'text-white')
+    })
+    
+    cvNav.addEventListener("click", function () {
+        vacancyNav.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
+        vacancyNav.classList.remove('bg-gray-900', 'text-white')
+        cvNav.classList.add('bg-gray-900', 'text-white')
+        cvNav.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
+        appliedNav.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
+        appliedNav.classList.remove('bg-gray-900', 'text-white')
+    })
+
+    appliedNav.addEventListener("click", function () {
+        vacancyNav.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
+        vacancyNav.classList.remove('bg-gray-900', 'text-white')
+        cvNav.classList.remove('bg-gray-900', 'text-white')
+        cvNav.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
+        appliedNav.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
+        appliedNav.classList.add('bg-gray-900', 'text-white')
+    })
+    
+    applyBtn.addEventListener("click", function () {
+        applyDiv.classList.remove('hidden')
+
+        if (backDiv.classList.contains('opacity-0', 'ease-in', 'duration-200')) {
+            backDiv.classList.remove('opacity-0', 'ease-in', 'duration-200')
+            backDiv.classList.add('ease-out', 'duration-300', 'opacity-100')
+
+        } else {
+            backDiv.classList.add('opacity-0', 'ease-in', 'duration-200')
+            backDiv.classList.remove('ease-out', 'duration-300', 'opacity-100')
+        }
+        modalDiv.classList.remove('opacity-0', 'ease-in', 'duration-200', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95')
+        modalDiv.classList.add('ease-out', 'duration-300', 'opacity-100', 'translate-y-0', 'sm:scale-100')
+    })
+
+    okBtn.addEventListener("click", function () {
+        applyDiv.classList.add('hidden')
+        backDiv.classList.add('opacity-0', 'ease-in', 'duration-200')
+        backDiv.classList.remove('ease-out', 'duration-300', 'opacity-100')
+        modalDiv.classList.add('opacity-0', 'ease-in', 'duration-200', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95')
+        modalDiv.classList.remove('ease-out', 'duration-300', 'opacity-100', 'translate-y-0', 'sm:scale-100')
+    })
+
+</script>
+
+
+</html>

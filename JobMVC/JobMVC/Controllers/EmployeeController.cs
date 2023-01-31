@@ -17,16 +17,16 @@ namespace JobMVC.Controllers
         {
             return View();
         }
+        public IActionResult Applied()
+        {
+            return View();
+        }
 
         public IActionResult Vacancies()
         {
             return View();
         }
 
-        public IActionResult Applied()
-        {
-            return View();
-        }
 
         public IActionResult CVs()
         {

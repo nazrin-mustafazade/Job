@@ -11,7 +11,12 @@ namespace JobMVC.Controllers
     public class AdminController : Controller
     {
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Employer()
+        {
+            return View();
+        }
+
+        public IActionResult Employee()
         {
             return View();
         }
