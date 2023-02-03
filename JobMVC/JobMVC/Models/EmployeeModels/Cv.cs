@@ -19,7 +19,7 @@ public class Cv
     
     //one to one relation 
     [ForeignKey("AppUser")]
-    public string AppUserId { get; set; }
+    public int AppUserId { get; set; }
     public AppUser AppUser { get; set; }
     
 }

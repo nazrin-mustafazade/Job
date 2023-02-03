@@ -4,6 +4,7 @@ using JobMVC.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace JobMVC.DataAccessLayer
 {
@@ -15,6 +16,17 @@ namespace JobMVC.DataAccessLayer
 
 		private DbSet<AppUser> AppUsers => Set<AppUser>();
 		public DbSet<Cv> Cvs { get; set; }
-	}
+
+        public class YourDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
+        {
+            public AppDbContext CreateDbContext(string[] args)
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+                optionsBuilder.UseSqlServer("Server=localhost;Database=JobMVCNew;Uid=postgres;Password=Promises00;");
+
+                return new AppDbContext(optionsBuilder.Options);
+            }
+        }
+    }
 }
 
