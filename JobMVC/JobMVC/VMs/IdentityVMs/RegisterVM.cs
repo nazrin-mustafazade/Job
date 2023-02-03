@@ -18,9 +18,27 @@ public class RegisterVM {
     [Required]
     [DataType(DataType.Password)]
     public string Password { get; set; }
+    
+    
     [Required]
-    [DataType(DataType.Password)]
-    [Compare(nameof(Password))]
-    public string ConfirmPassword { get; set; }
-    public bool Terms { get; set; }
+    public string PhoneNumber { get; set; }
+    
+    [Required]
+    public string Country { get; set; }
+    
+    [Required]
+    public string Address { get; set; }
+    
+    [Required]
+    public string City { get; set; }
+    
+    [Required]
+    public string Zip { get; set; }
+    
+    [Required]
+    public string State { get; set; }
+    
+
+    public bool isEmployer { get; set; } = false;
+
 }

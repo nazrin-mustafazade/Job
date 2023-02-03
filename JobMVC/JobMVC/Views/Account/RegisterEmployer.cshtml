@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
 }
+@model JobMVC.VMs.IdentityVMs.RegisterEmployerVM
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-white">
 <head>
@@ -42,54 +43,36 @@
                 <p class="mt-1 text-sm text-gray-500">Use a permanent address where you can receive mail.</p>
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
-                <form action="#" method="POST">
+                <div asp-validation-summary="ModelOnly"></div>
+                <form  method="POST">
                     <div class="grid grid-cols-6 gap-6">
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="company-name" class="block text-sm font-medium text-gray-700">Company Name</label>
-                            <input type="text" name="company-name" id="company-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-                        <div class="col-span-6 sm:col-span-3">
-                             <fieldset class="mt-4">
-                                <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
-                                    <div class="flex items-center">
-                                        <input id="asc" name="company-type" type="radio" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                        <label for="company-type" class="ml-3 block text-sm font-medium text-gray-700"> ASC </label>
-                                    </div>
-
-                                    <div class="flex items-center">
-                                        <input id="mmc" name="company-type"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                        <label for="company-type" class="ml-3 block text-sm font-medium text-gray-700"> MMC </label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="other" name="company-type" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                        <label for="company-type" class="ml-3 block text-sm font-medium text-gray-700"> Other </label>
-                                    </div>
-
-                                </div>
-                            </fieldset>
+                            <label for="CompanyName" class="block text-sm font-medium text-gray-700">Company Name</label>
+                            <input asp-for="CompanyName" type="text" name="CompanyName" id="CompanyName" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
+
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
-                            <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <label for="Email" class="block text-sm font-medium text-gray-700">Email address</label>
+                            <input asp-for="Email" type="text" name="Email" id="Email" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
                         <div class="col-span-6 sm:col-span-3">
                             <label for="Password" class="block text-sm font-medium text-gray-700">Password</label>
-                            <input type="password" name="password" id="password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <input asp-for="Password" type="password" name="Password" id="Password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="employer-size" class="block text-sm font-medium text-gray-700">Employer size</label>
-                            <input type="number" name="employer-size" id="employer-size" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <label for="EmployerSize" class="block text-sm font-medium text-gray-700">Employer size</label>
+                            <input asp-for="EmployerSize" type="number" name="EmployerSize" id="EmployerSize" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="establish-date" class="block text-sm font-medium text-gray-700">Establish date</label>
-                            <input type="date" name="establish-date" id="establish-date" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <label for="EstablishDate" class="block text-sm font-medium text-gray-700">Establish date</label>
+                            <input asp-for="EstablishDate" type="date" name="EstablishDate" id="EstablishDate" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
                             <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
-                            <select id="category" name="category" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <select asp-for="Category" id="category" name="category" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 <option>Technology</option>
                                 <option>Health</option>
                                 <option>Agriculture</option>
@@ -97,15 +80,15 @@
                         </div>
 
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-                            <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <label for="Country" class="block text-sm font-medium text-gray-700">Country</label>
+                            <select asp-for="Country" id="Country" name="Country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 <option>United States</option>
                                 <option>Canada</option>
                                 <option>Mexico</option>
                             </select>
                         </div>
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="phone-number" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <label for="PhoneNumber" class="block text-sm font-medium text-gray-700">Phone Number</label>
                             <div class="mt-1 relative rounded-md shadow-sm">
                                 <div class="absolute inset-y-0 left-0 flex items-center">
                                     <label for="country" class="sr-only">Country</label>
@@ -115,29 +98,33 @@
                                         <option>EU</option>
                                     </select>
                                 </div>
-                                <input type="text" name="phone-number" id="phone-number" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-16 sm:text-sm border-gray-300 rounded-md" placeholder="      (555) 987-6543">
+                                <input asp-for="PhoneNumber" type="text" name="PhoneNumber" id="PhoneNumber" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-16 sm:text-sm border-gray-300 rounded-md" placeholder="      (555) 987-6543">
                             </div>
                         </div>
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>
-                            <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <label for="Address" class="block text-sm font-medium text-gray-700">Street address</label>
+                            <input asp-for="Address" type="text" name="Address" id="Address" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                            <label for="city" class="block text-sm font-medium text-gray-700">City</label>
-                            <input type="text" name="city" id="city" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <label for="City" class="block text-sm font-medium text-gray-700">City</label>
+                            <input asp-for="City" type="text" name="City" id="City" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                            <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>
-                            <input type="text" name="region" id="region" autocomplete="address-level1" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <label for="State" class="block text-sm font-medium text-gray-700">State / Province</label>
+                            <input asp-for="State" type="text" name="State" id="State" autocomplete="address-level1" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                            <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>
-                            <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <label for="Zip" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>
+                            <input asp-for="Zip" type="text" name="Zip" id="Zip" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                         </div>
                     </div>
+                        <div class="flex justify-end">
+                            <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                            <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                        </div>
                 </form>
             </div>
         </div>
@@ -145,10 +132,7 @@
 
 
 
-    <div class="flex justify-end">
-        <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
-        <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
-    </div>
+    
 </div>
 
 </html>

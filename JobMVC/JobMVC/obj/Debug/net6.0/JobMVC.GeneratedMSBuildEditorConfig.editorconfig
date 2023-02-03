@@ -8,149 +8,149 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = JobMVC
 build_property.RootNamespace = JobMVC
-build_property.ProjectDir = C:\Users\mnezr\source\repos\Job\JobMVC\JobMVC\
+build_property.ProjectDir = /Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\mnezr\source\repos\Job\JobMVC\JobMVC
+build_property.MSBuildProjectDirectory = /Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Pages/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/LoginEmployee.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbkVtcGxveWVlLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Account/LoginEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbkVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/LoginEmployer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbkVtcGxveWVyLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Account/LoginEmployer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbkVtcGxveWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/RegisterEmployee.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlckVtcGxveWVlLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Account/RegisterEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3RlckVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Account/RegisterEmployer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlckVtcGxveWVyLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Account/RegisterEmployer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3RlckVtcGxveWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Admin/Employee.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRW1wbG95ZWUuY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Admin/Employee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Admin/Employer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRW1wbG95ZXIuY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Admin/Employer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRW1wbG95ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Admin/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Admin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/AddCV.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkQ1YuY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employee/AddCv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvQWRkQ3YuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/Applied.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQXBwbGllZC5jc2h0bWw=
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employee/Applied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvQXBwbGllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/CVs.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ1ZzLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employee/CVs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvQ1ZzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/DetailsCV.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlsc0NWLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employee/DetailsCV.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvRGV0YWlsc0NWLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/DetailsVacancy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlsc1ZhY2FuY3kuY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employee/DetailsVacancy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvRGV0YWlsc1ZhY2FuY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/MyCV.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTXlDVi5jc2h0bWw=
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employee/MyCv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvTXlDdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/Settings.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcU2V0dGluZ3MuY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employee/Settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvU2V0dGluZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employee/Vacancies.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVmFjYW5jaWVzLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employee/Vacancies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvVmFjYW5jaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/AddVacancy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcQWRkVmFjYW5jeS5jc2h0bWw=
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employer/AddVacancy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZXIvQWRkVmFjYW5jeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/Applied.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcQXBwbGllZC5jc2h0bWw=
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employer/Applied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZXIvQXBwbGllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/CVs.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcQ1ZzLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employer/CVs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZXIvQ1ZzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/DetailsCV.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcRGV0YWlsc0NWLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employer/DetailsCv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZXIvRGV0YWlsc0N2LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcSW5kZXguY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZXIvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/Settings.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcU2V0dGluZ3MuY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employer/Settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZXIvU2V0dGluZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Employer/Vacancies.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZXJcVmFjYW5jaWVzLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Employer/Vacancies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZXIvVmFjYW5jaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Home/AboutUs.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mnezr/source/repos/Job/JobMVC/JobMVC/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-7z09qcywgz
+[/Users/fatehmmmdli/Desktop/JOB YAZIRIQ BRAAAAAAAAAAAAT/Job/JobMVC/JobMVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-qmpluvm7qy

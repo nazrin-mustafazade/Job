@@ -1,17 +1,24 @@
 ﻿<Properties StartupConfiguration="{6331B822-7E54-49EF-B670-AC6D3C3449A0}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.JobMVC PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="JobMVC/Models/Identity/AppUser.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="JobMVC/Controllers/EmployeeController.cs">
     <Files>
+      <File FileName="../../../job-nazrin/Job/JobMVC/JobMVC.sln" />
       <File FileName="JobMVC/Controllers/HomeController.cs" />
       <File FileName="JobMVC/Controllers/AdminController.cs" />
       <File FileName="JobMVC/Views/Home/Index.cshtml" />
       <File FileName="JobMVC/Views/Shared/_Layout.cshtml" />
       <File FileName="JobMVC/Models/EmployerModels/Job.cs" />
       <File FileName="JobMVC/Models/EmployerModels/JobCategory.cs" />
-      <File FileName="JobMVC/Views/Account/Login.cshtml" />
       <File FileName="JobMVC/DataAccessLayer/AppDbContext.cs" />
-      <File FileName="JobMVC/Models/Identity/AppUser.cs" Line="7" Column="39" />
+      <File FileName="JobMVC/Models/Identity/AppUser.cs" />
+      <File FileName="JobMVC/Program.cs" />
+      <File FileName="JobMVC/Properties/launchSettings.json" Line="14" Column="72" />
+      <File FileName="JobMVC/Controllers/EmployeeController.cs" Line="44" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,11 +28,11 @@
               <Node name="Controllers" expanded="True" />
               <Node name="DataAccessLayer" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="Base" expanded="True" />
                 <Node name="EmployeeModels" expanded="True" />
                 <Node name="EmployerModels" expanded="True" />
                 <Node name="Identity" expanded="True" />
               </Node>
+              <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
                 <Node name="Home" expanded="True" />
@@ -37,9 +44,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.JobMVC PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

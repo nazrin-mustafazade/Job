@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+@model Cv
+<main>
+    <div asp-validation-summary="ModelOnly"></div>
+    <form method="post">
+        <div>
+            <label for="about">About</label>
+            <input type="text" asp-for="About" id="About" name="About">
+        </div>
+        <div>
+            <label for="MinimumSalary">Minimum Salary</label>
+            <input type="number" asp-for="MinimumSalary" id="MinimumSalary" name="MinimumSalary">
+        </div>
+        <div>
+            <label for="MaximumSalary">MaximumSalary</label>
+            <input type="number" asp-for="MaximumSalary" id="MaximumSalary" name="MaximumSalary">
+        </div>
+        <div>
+            <label for="Education">Education</label>
+            <input type="text" asp-for="Education" id="Education" name="Education">
+        </div>
+        <div>
+            <label for="Skills">Skills</label>
+            <input type="text" asp-for="Skills" id="Skills" name="Skills">
+        </div>
+        <div>
+            <label for="Experiences">Experiences</label>
+            <input type="text" asp-for="Experiences" id="Experiences" name="Experiences">
+        </div>
+        <div>
+            <label for="Languages">Languages</label>
+            <input type="text" asp-for="Languages" id="Languages" name="languages">
+        </div>
+        <button type="submit">Submit</button>
+        
+    </form>
+</main>
