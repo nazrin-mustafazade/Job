@@ -72,9 +72,14 @@ namespace JobMVC.Controllers
         public async Task<IActionResult> Applied()
         {
             AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
-            List<Vacancy> vacancies = _dbContext.Vacancies.Include(v=>v.AppUser).Include(v => v.Applicant).ThenInclude(a => a.AppUsers)
+            List<Vacancy> vacancies = _dbContext.Vacancies.Include(v=> v.AcceptedEmployees).ThenInclude(ae=>ae.Employees).Include(v=>v.AppUser).Include(v => v.Applicant).ThenInclude(a => a.AppUsers)
                 .Where(v => v.Applicant.AppUsers.Contains(userSession)).ToList();
-            return View(vacancies);
+            VacancyAppliedEmployee vm = new VacancyAppliedEmployee()
+            {
+                Vacancies = vacancies,
+                Employee = userSession
+            };
+            return View(vm);
         }
 
         public async Task<IActionResult> Vacancies()

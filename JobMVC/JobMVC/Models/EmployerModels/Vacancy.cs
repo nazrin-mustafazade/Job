@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using JobMVC.Models.Identity;
+using JobMVC.Views.Employee;
 
 namespace JobMVC.Models.EmployerModels;
 
@@ -22,6 +23,6 @@ public class Vacancy
     public int ApplicantId { get; set; }
     public Applicant Applicant { get; set; }
     
-    public List<AppUser> AcceptedEmployees { get; set; }
+    public AcceptedEmployees AcceptedEmployees { get; set; }
     // public virtual ICollection<Applicant> Applicants { get; set; }
 }

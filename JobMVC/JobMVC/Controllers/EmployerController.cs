@@ -2,6 +2,7 @@
 using JobMVC.Models;
 using JobMVC.Models.EmployerModels;
 using JobMVC.Models.Identity;
+using JobMVC.Views.Employee;
 using JobMVC.VMs.EmployeeVMs;
 using JobMVC.VMs.EmployerVMs;
 using Microsoft.AspNetCore.Identity;
@@ -39,6 +40,11 @@ namespace JobMVC.Controllers
             {
                 AppUsers = new List<AppUser>()
             };
+            AcceptedEmployees acceptedEmployees = new AcceptedEmployees()
+            {
+                Employees = new List<AppUser>(),
+               
+            };
             Vacancy vacancy = new Vacancy()
             {
                 JobTitle = vacancyVm.JobTitle,
@@ -48,10 +54,11 @@ namespace JobMVC.Controllers
                 MaximumSalary = vacancyVm.MaximumSalary,
                 AppUser = userSession,
                 AppUserId = userSession.Id,
-                
             };
             applicant.Vacancy = vacancy;
             vacancy.Applicant = applicant;
+            acceptedEmployees.Vacancy = vacancy;
+            vacancy.AcceptedEmployees = acceptedEmployees;
             await _dbContext.Vacancies.AddAsync(vacancy);
             await _dbContext.Applicants.AddAsync(applicant);
             await _dbContext.SaveChangesAsync();
@@ -115,8 +122,9 @@ namespace JobMVC.Controllers
         public async Task<IActionResult> AcceptEmployee(string id, int vacancyid)
         {
             AppUser user = await  _userManager.FindByIdAsync(id);
-            Vacancy vacancy = await _dbContext.Vacancies.FindAsync(vacancyid);
-            vacancy.AcceptedEmployees.Add(user);
+            Vacancy vacancy =  _dbContext.Vacancies.Include(v => v.AcceptedEmployees).ThenInclude(ae=>ae.Employees)
+                .FirstOrDefault(v => v.VacancyId == vacancyid);
+            vacancy.AcceptedEmployees.Employees.Add(user);
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Applied));
         }
