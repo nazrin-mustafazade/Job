@@ -38,6 +38,7 @@ public class RegisterVM {
     [Required]
     public string State { get; set; }
     
+    public IFormFile ImageProfile { get; set; }
 
     public bool isEmployer { get; set; } = false;
 

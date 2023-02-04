@@ -18,8 +18,8 @@ public class Cv
     public string Languages { get; set; }
     
     //one to one relation 
-    [ForeignKey("AppUser")]
-    public int AppUserId { get; set; }
+    
+    public string AppUserId { get; set; }
     public AppUser AppUser { get; set; }
     
 }

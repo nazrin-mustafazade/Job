@@ -1,0 +1,79 @@
+@model Cv
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body class="bg-blue-300">
+<div asp-validation-summary="ModelOnly"></div>
+<form method="post">
+    <div class="content-center bg-blue-300 px-32 py-24">
+        <div class="overflow-hidden bg-purple-700 shadow sm:rounded-lg">
+            <div class="px-4 py-5 sm:px-6">
+                <h3 class="text-lg font-medium leading-6 text-white">Applicant Information</h3>
+                <p class="mt-1 max-w-2xl text-sm text-white">Update personal details and application in the form below.</p>
+            </div>
+            <div class="border-t border-gray-200">
+                <dl>
+                    <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Full Name</dt>
+                        <input asp-for="Fullname" type="text" placeholder="@Model.Fullname">
+                        <span asp-validation-for="Fullname"></span>
+                    </div>
+                    <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Email address</dt>
+                        <input asp-for="Email" type="email" placeholder="@Model.Email">
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">About</dt>
+                        <input asp-for="About" type="text" placeholder="@Model.About">
+                        <span asp-validation-for="About"></span>
+                    </div>
+                    <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Expected minimum salary/year</dt>
+                        <input asp-for="MinimumSalary" type="number" placeholder="@Model.MinimumSalary">
+                        <span asp-validation-for="MinimumSalary"></span>
+                    </div>
+                    <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Expected maximum salary/year</dt>
+                        <input asp-for="MaximumSalary" type="number" placeholder="@Model.MaximumSalary">
+                        <span asp-validation-for="MaximumSalary"></span>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Education</dt>
+                        <input asp-for="Education" type="text" placeholder="@Model.Education">
+                        <span asp-validation-for="Education"></span>
+                    </div>
+                    <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Skills
+                        <input asp-for="Skills" type="text" placeholder="@Model.Skills">
+                        <span asp-validation-for="Skills"></span>
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Experiences</dt>
+                        <input asp-for="Experiences" type="text" placeholder="@Model.Experiences">
+                        <span asp-validation-for="Experiences"></span>
+                    </div>
+                    <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Languages</dt>
+                        <input asp-for="Languages" type="text" placeholder="@Model.Languages">
+                        <span asp-validation-for="Languages"></span>
+                    </div>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+    <button> Update </button>
+</form>
+
+
+</body>
+</html>

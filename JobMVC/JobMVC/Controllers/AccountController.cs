@@ -7,6 +7,7 @@ using JobMVC.Models.Identity;
 using JobMVC.VMs.IdentityVMs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using NuGet.Protocol.Plugins;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -52,7 +53,24 @@ namespace JobMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterEmployee(RegisterVM registerVm)
         {
+            
             if (!ModelState.IsValid) return BadRequest();
+
+            var file = registerVm.ImageProfile;
+            string newFileName = "";
+            if (file.FileName.Length > 50)
+            {
+                newFileName = file.FileName.Substring(40);
+            }
+            else
+            {
+                newFileName = file.FileName;
+            }
+            
+            using (var writer = new FileStream(@"wwwroot/images/"+ newFileName, FileMode.Create))
+            {
+                file.CopyTo(writer);
+            }
             AppUser createdUser = new AppUser()
             {
                 FirstName = registerVm.Firstname,
@@ -65,6 +83,7 @@ namespace JobMVC.Controllers
                 UserName = registerVm.Email,
                 City = registerVm.City,
                 Country = registerVm.Country,
+                ImageUrl = newFileName
 
             };
             IdentityResult createUserResult = await _userManager.CreateAsync(createdUser, registerVm.Password);
@@ -87,7 +106,22 @@ namespace JobMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterEmployer(RegisterEmployerVM registerEmployerVm)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            if (!ModelState.IsValid) return View();
+            var file = registerEmployerVm.ProfileImage;
+            string newFileName = "";
+            if (file.FileName.Length > 50)
+            {
+                newFileName = file.FileName.Substring(40);
+            }
+            else
+            {
+                newFileName = file.FileName + Guid.NewGuid().ToString();
+            }
+            
+            using (var writer = new FileStream(@"wwwroot/images/"+ newFileName, FileMode.Create))
+            {
+                file.CopyTo(writer);
+            }
             AppUser createdEmployer = new AppUser()
             {
                 Company = registerEmployerVm.CompanyName,
@@ -101,7 +135,8 @@ namespace JobMVC.Controllers
                 Address = registerEmployerVm.Address,
                 City = registerEmployerVm.City,
                 State = registerEmployerVm.State,
-                Zip = registerEmployerVm.Zip
+                Zip = registerEmployerVm.Zip,
+                ImageUrl = newFileName
             };
             IdentityResult employerCreate = await _userManager.CreateAsync(createdEmployer, registerEmployerVm.Password);
             await _userManager.AddToRoleAsync(createdEmployer, Roles.Employer.ToString());
@@ -151,12 +186,6 @@ namespace JobMVC.Controllers
             return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Signout()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction(nameof(LoginEmployee));
-        }
         
         [HttpPost]
         public async Task<IActionResult> LoginEmployer(LoginVM loginEmployerVm)
@@ -176,9 +205,17 @@ namespace JobMVC.Controllers
                 ModelState.AddModelError("", "Login error");
                 return View();
             }
+            return RedirectToAction("Vacancies", "Employer");
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> Signout()
+        {  
+            await _signInManager.SignOutAsync(); 
             return RedirectToAction("Index", "Home");
         }
-
+                
+                
     }
 }
 

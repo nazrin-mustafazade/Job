@@ -2,38 +2,59 @@
     Layout = null;
 }
 @model Cv
-<main>
-    <div asp-validation-summary="ModelOnly"></div>
+<body class="bg-blue-300">
     <form method="post">
-        <div>
-            <label for="about">About</label>
-            <input type="text" asp-for="About" id="About" name="About">
-        </div>
-        <div>
-            <label for="MinimumSalary">Minimum Salary</label>
-            <input type="number" asp-for="MinimumSalary" id="MinimumSalary" name="MinimumSalary">
-        </div>
-        <div>
-            <label for="MaximumSalary">MaximumSalary</label>
-            <input type="number" asp-for="MaximumSalary" id="MaximumSalary" name="MaximumSalary">
-        </div>
-        <div>
-            <label for="Education">Education</label>
-            <input type="text" asp-for="Education" id="Education" name="Education">
-        </div>
-        <div>
-            <label for="Skills">Skills</label>
-            <input type="text" asp-for="Skills" id="Skills" name="Skills">
-        </div>
-        <div>
-            <label for="Experiences">Experiences</label>
-            <input type="text" asp-for="Experiences" id="Experiences" name="Experiences">
-        </div>
-        <div>
-            <label for="Languages">Languages</label>
-            <input type="text" asp-for="Languages" id="Languages" name="languages">
-        </div>
-        <button type="submit">Submit</button>
+        <div class="content-center bg-blue-300 px-32 py-24">
+            <div class="overflow-hidden bg-purple-700 shadow sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg font-medium leading-6 text-white">Applicant Information</h3>
+                    <p class="mt-1 max-w-2xl text-sm text-white">Add personal details and application in the form below.</p>
+                </div>
+                <div class="border-t border-gray-200">
+                    <dl>
+                        <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">Full Name</dt>
+                            <input asp-for="Fullname" type="text">
+                        </div>
+                        <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">Email address</dt>
+                            <input asp-for="Email" type="email">
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">About</dt>
+                            <input asp-for="About" type="text">
+                        </div>
+                        <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">Expected minimum salary/year</dt>
+                            <input asp-for="MinimumSalary" type="number">
+                        </div>
+                        <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">Expected maximum salary/year</dt>
+                            <input asp-for="MaximumSalary" type="number">
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">Education</dt>
+                            <input asp-for="Education" type="text">
+                        </div>
+                        <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">Skills
+                            <input asp-for="Skills" type="text">
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">Experiences</dt>
+                            <input asp-for="Experiences" type="text">
+                        </div>
+                        <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">Languages</dt>
+                            <input asp-for="Languages" type="text">
+                        </div>
         
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <button type="submit">Save</button>
     </form>
-</main>
+
+
+</body>

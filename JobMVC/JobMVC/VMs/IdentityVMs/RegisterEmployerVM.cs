@@ -15,4 +15,6 @@ public class RegisterEmployerVM
     public string State { get; set; }
     public string Zip { get; set; }
     
+    public IFormFile ProfileImage { get; set; }
+    
 }

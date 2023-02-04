@@ -1,5 +1,6 @@
 ﻿using System;
 using JobMVC.Models;
+using JobMVC.Models.EmployerModels;
 using JobMVC.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -8,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace JobMVC.DataAccessLayer
 {
-	public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<int>, int>
+	public class AppDbContext : IdentityDbContext
 	{
 		public AppDbContext(DbContextOptions options) : base(options)
 		{
@@ -16,13 +17,15 @@ namespace JobMVC.DataAccessLayer
 
 		private DbSet<AppUser> AppUsers => Set<AppUser>();
 		public DbSet<Cv> Cvs { get; set; }
+		public DbSet<Vacancy> Vacancies { get; set; }
+		public DbSet<Applicant> Applicants { get; set; }
 
         public class YourDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
         {
             public AppDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-                optionsBuilder.UseSqlServer("Server=localhost;Database=JobMVCNew;Uid=postgres;Password=Promises00;");
+                optionsBuilder.UseNpgsql("Server=localhost;Database=JobMVC1;Uid=postgres;Password=OnyxOrion01;");
 
                 return new AppDbContext(optionsBuilder.Options);
             }

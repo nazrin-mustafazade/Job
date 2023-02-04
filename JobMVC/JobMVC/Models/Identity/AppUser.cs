@@ -3,12 +3,16 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 using JobMVC.Models;
+using JobMVC.Models.EmployerModels;
 
 namespace JobMVC.Models.Identity
 {
-	public class AppUser : IdentityUser<int>
+	public class AppUser : IdentityUser
 	{
-		
+		public AppUser()
+		{
+			this.Applicants = new HashSet<Applicant>();
+		}
 		public string FirstName { get; set; } 
 		public string LastName { get; set; } 
 		public string FullName { get { return FirstName + " " + LastName; } }
@@ -25,7 +29,7 @@ namespace JobMVC.Models.Identity
 		public string Category { get; set; }
 		
 		
-		
+		public string ImageUrl { get; set; }
 		[NotMapped]
 		public IFormFile ProfileImage { get; set; }
 		
@@ -39,6 +43,7 @@ namespace JobMVC.Models.Identity
 		public bool IsEmployer { get; set; }
 		
 		public Cv Cv { get; set; }
+		public virtual ICollection<Applicant> Applicants { get; set; }
 		
 	}
 }

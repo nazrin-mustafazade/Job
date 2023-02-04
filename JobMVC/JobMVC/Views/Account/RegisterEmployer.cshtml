@@ -7,132 +7,129 @@
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<div class="space-y-6">
-    <div class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
-        <div class="md:grid md:grid-cols-3 md:gap-6">
-            <div class="md:col-span-1">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Profile</h3>
-                <p class="mt-1 text-sm text-gray-500">This information will be displayed publicly so be careful what you share.</p>
-            </div>
-            <div class="mt-5 md:mt-0 md:col-span-2">
-                <form class="space-y-6" action="#" method="POST">
-
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700"> Company Logo </label>
-                        <div class="mt-1 flex items-center space-x-5">
-                            <span class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
-                                <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                            </span>
-                            <button type="button" class="bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Change</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
-        <div class="md:grid md:grid-cols-3 md:gap-6">
-            <div class="md:col-span-1">
-                <h3 class="text-lg font-medium leading-6 text-gray-900">Information</h3>
-                <p class="mt-1 text-sm text-gray-500">Use a permanent address where you can receive mail.</p>
-            </div>
-            <div class="mt-5 md:mt-0 md:col-span-2">
-                <div asp-validation-summary="ModelOnly"></div>
-                <form  method="POST">
-                    <div class="grid grid-cols-6 gap-6">
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="CompanyName" class="block text-sm font-medium text-gray-700">Company Name</label>
-                            <input asp-for="CompanyName" type="text" name="CompanyName" id="CompanyName" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-
-
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="Email" class="block text-sm font-medium text-gray-700">Email address</label>
-                            <input asp-for="Email" type="text" name="Email" id="Email" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="Password" class="block text-sm font-medium text-gray-700">Password</label>
-                            <input asp-for="Password" type="password" name="Password" id="Password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="EmployerSize" class="block text-sm font-medium text-gray-700">Employer size</label>
-                            <input asp-for="EmployerSize" type="number" name="EmployerSize" id="EmployerSize" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="EstablishDate" class="block text-sm font-medium text-gray-700">Establish date</label>
-                            <input asp-for="EstablishDate" type="date" name="EstablishDate" id="EstablishDate" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
-                            <select asp-for="Category" id="category" name="category" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                <option>Technology</option>
-                                <option>Health</option>
-                                <option>Agriculture</option>
-                            </select>
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="Country" class="block text-sm font-medium text-gray-700">Country</label>
-                            <select asp-for="Country" id="Country" name="Country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                <option>United States</option>
-                                <option>Canada</option>
-                                <option>Mexico</option>
-                            </select>
-                        </div>
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="PhoneNumber" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                            <div class="mt-1 relative rounded-md shadow-sm">
-                                <div class="absolute inset-y-0 left-0 flex items-center">
-                                    <label for="country" class="sr-only">Country</label>
-                                    <select id="country" name="country" autocomplete="country" class="focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md">
-                                        <option>US</option>
-                                        <option>CA</option>
-                                        <option>EU</option>
-                                    </select>
-                                </div>
-                                <input asp-for="PhoneNumber" type="text" name="PhoneNumber" id="PhoneNumber" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-16 sm:text-sm border-gray-300 rounded-md" placeholder="      (555) 987-6543">
+<div asp-validation-summary="ModelOnly"></div>
+<form method="post" enctype="multipart/form-data">
+    <div class="space-y-6">
+        <div class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
+            <div class="md:grid md:grid-cols-3 md:gap-6">
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-medium leading-6 text-gray-900">Profile</h3>
+                    <p class="mt-1 text-sm text-gray-500">This information will be displayed publicly so be careful what you share.</p>
+                </div>
+                <div class="mt-5 md:mt-0 md:col-span-2">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700"> Company Logo </label>
+                            <div class="mt-1 flex items-center space-x-5">
+                                <span class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                                    <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </span>
+                                <input asp-for="ProfileImage" type="file" class="bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <span asp-validation-for="ProfileImage"></span>
                             </div>
                         </div>
-                        <div class="col-span-6 sm:col-span-3">
-                            <label for="Address" class="block text-sm font-medium text-gray-700">Street address</label>
-                            <input asp-for="Address" type="text" name="Address" id="Address" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                            <label for="City" class="block text-sm font-medium text-gray-700">City</label>
-                            <input asp-for="City" type="text" name="City" id="City" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                            <label for="State" class="block text-sm font-medium text-gray-700">State / Province</label>
-                            <input asp-for="State" type="text" name="State" id="State" autocomplete="address-level1" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-
-                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                            <label for="Zip" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>
-                            <input asp-for="Zip" type="text" name="Zip" id="Zip" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-                    </div>
-                        <div class="flex justify-end">
-                            <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
-                            <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
-                        </div>
-                </form>
+    
+                    
+                </div>
             </div>
         </div>
-    </div>
-
-
-
     
-</div>
+        <div class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
+            <div class="md:grid md:grid-cols-3 md:gap-6">
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-medium leading-6 text-gray-900">Information</h3>
+                    <p class="mt-1 text-sm text-gray-500">Use a permanent address where you can receive mail.</p>
+                </div>
+                <div class="mt-5 md:mt-0 md:col-span-2">
+                    
+                        <div class="grid grid-cols-6 gap-6">
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="CompanyName" class="block text-sm font-medium text-gray-700">Company Name</label>
+                                <input asp-for="CompanyName" type="text" name="CompanyName" id="CompanyName" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+    
+    
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="Email" class="block text-sm font-medium text-gray-700">Email address</label>
+                                <input asp-for="Email" type="text" name="Email" id="Email" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="Password" class="block text-sm font-medium text-gray-700">Password</label>
+                                <input asp-for="Password" type="password" name="Password" id="Password" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+    
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="EmployerSize" class="block text-sm font-medium text-gray-700">Employer size</label>
+                                <input asp-for="EmployerSize" type="number" name="EmployerSize" id="EmployerSize" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="EstablishDate" class="block text-sm font-medium text-gray-700">Establish date</label>
+                                <input asp-for="EstablishDate" type="date" name="EstablishDate" id="EstablishDate" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+    
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+                                <select asp-for="Category" id="category" name="category" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <option>Technology</option>
+                                    <option>Health</option>
+                                    <option>Agriculture</option>
+                                </select>
+                            </div>
+    
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="Country" class="block text-sm font-medium text-gray-700">Country</label>
+                                <select asp-for="Country" id="Country" name="Country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                    <option>United States</option>
+                                    <option>Canada</option>
+                                    <option>Mexico</option>
+                                </select>
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="PhoneNumber" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <div class="mt-1 relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 flex items-center">
+                                        <label for="country" class="sr-only">Country</label>
+                                        <select id="country" name="country" autocomplete="country" class="focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md">
+                                            <option>US</option>
+                                            <option>CA</option>
+                                            <option>EU</option>
+                                        </select>
+                                    </div>
+                                    <input asp-for="PhoneNumber" type="text" name="PhoneNumber" id="PhoneNumber" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-16 sm:text-sm border-gray-300 rounded-md" placeholder="      (555) 987-6543">
+                                </div>
+                            </div>
+                            <div class="col-span-6 sm:col-span-3">
+                                <label for="Address" class="block text-sm font-medium text-gray-700">Street address</label>
+                                <input asp-for="Address" type="text" name="Address" id="Address" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+    
+                            <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                                <label for="City" class="block text-sm font-medium text-gray-700">City</label>
+                                <input asp-for="City" type="text" name="City" id="City" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+    
+                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                                <label for="State" class="block text-sm font-medium text-gray-700">State / Province</label>
+                                <input asp-for="State" type="text" name="State" id="State" autocomplete="address-level1" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+    
+                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                                <label for="Zip" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>
+                                <input asp-for="Zip" type="text" name="Zip" id="Zip" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                        </div>
+                            <div class="flex justify-end">
+                                <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</button>
+                                <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                            </div>
+                   
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+</form>
+
 
 </html>

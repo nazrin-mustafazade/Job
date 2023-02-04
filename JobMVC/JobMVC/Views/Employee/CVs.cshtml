@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Cv>
 <!DOCTYPE html>
 <html lang="en">
 <nav class="bg-purple-800">
@@ -57,7 +57,6 @@
                     </div>
                     <div id="userDiv" class="transform opacity-0 scale-95 absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                         <!-- Active: "bg-gray-100", Not Active: "" -->
-                        <a asp-controller="Employee" asp-action="Settings" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
                         <a asp-controller="Employee" asp-action="Settings" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">My CV</a>
                         <a asp-controller="Employee" asp-action="Index" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
                     </div>
@@ -81,35 +80,39 @@
 
 </nav>
 <body class="bg-gray-200">
-    <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 py-16 px-8">
+<ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 py-16 px-8">
+    @foreach (Cv cv in @Model)
+    {
         <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
-            <div class="w-full flex items-center justify-between p-6 space-x-6">
-                <div class="flex-1 truncate">
-                    <div class="flex items-center space-x-3">
-                        <h3 class="text-gray-900 text-sm font-medium truncate">Jane Cooper</h3>
-                        <span class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">1000 USD/month</span>
+                <div class="w-full flex items-center justify-between p-6 space-x-6">
+                    <div class="flex-1 truncate">
+                        <div class="flex items-center space-x-3">
+                            <h3 class="text-gray-900 text-sm font-medium truncate">@cv.Fullname</h3>
+                            <span class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">@cv.MinimumSalary USD/month</span>
+                        </div>
+                        <p class="mt-1 text-gray-500 text-sm truncate">@cv.About</p>
                     </div>
-                    <p class="mt-1 text-gray-500 text-sm truncate">Regional Paradigm Technician</p>
+                    <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="~/images/@cv.AppUser.ImageUrl" alt="">
                 </div>
-                <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-            </div>
-            <div>
-                <div class="-mt-px flex divide-x divide-gray-200">
-                    <div class="w-0 flex-1 flex">
-                        <a asp-controller="Employee" asp-action="DetailsCV" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span class="ml-3">More Details</span>
-                        </a>
+                <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                        <div class="w-0 flex-1 flex">
+                            <a asp-controller="Employee" asp-action="DetailsCV" asp-route-id="@cv.AppUser.Id" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span class="ml-3">More Details</span>
+                            </a>
+                        </div>
+        
                     </div>
-                    
                 </div>
-            </div>
-        </li>
+            </li>
+    }
+    
 
-        <!-- More people... -->
-    </ul>
+    <!-- More people... -->
+</ul>
 
     <div id="applyDiv" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
