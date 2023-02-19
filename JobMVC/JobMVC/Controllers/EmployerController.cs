@@ -84,7 +84,8 @@ namespace JobMVC.Controllers
 
         public async Task<IActionResult> Vacancies()
         {
-            List<Vacancy> vacancies = await _dbContext.Vacancies.Include(v => v.AppUser).ToListAsync();
+            AppUser usersession = await _userManager.FindByNameAsync(User.Identity.Name);
+            List<Vacancy> vacancies = await _dbContext.Vacancies.Include(v => v.AppUser).Where(v=> v.AppUser.Id==usersession.Id).ToListAsync();
             
             return View(vacancies);
         }
@@ -99,10 +100,12 @@ namespace JobMVC.Controllers
         public async Task<IActionResult> DetailsCV(string id)
         {
             AppUser user = await _userManager.FindByIdAsync(id);
-            Cv cv =  await _dbContext.Cvs.Include(cv=>cv.AppUser).FirstOrDefaultAsync(cv => cv.AppUser == user);
+           
+            Cv cv =  await _dbContext.Cvs.Include(c=>c.AppUser).FirstOrDefaultAsync(c => c.AppUser.Id == user.Id);
             // Cv? cv = await _dbContext.Cvs.Include(c=>c.AppUser).FirstOrDefaultAsync(cv => cv.AppUser.Id == user.Id);
             // if (cv is null) return RedirectToAction(nameof(Vacancies));
-            return View(cv);
+            if (cv is null) return RedirectToAction(nameof(Vacancies));
+           return View(cv);
         }
         [HttpGet]
         public IActionResult Applied(int id)
@@ -113,7 +116,7 @@ namespace JobMVC.Controllers
             VacancyEmployeeVM vacancyEmployeeVm = new VacancyEmployeeVM()
             {
                 Vacancy = vacancy,
-                Users = users
+                Users = users 
             };
             return View(vacancyEmployeeVm);
         }
@@ -126,7 +129,7 @@ namespace JobMVC.Controllers
                 .FirstOrDefault(v => v.VacancyId == vacancyid);
             vacancy.AcceptedEmployees.Employees.Add(user);
             await _dbContext.SaveChangesAsync();
-            return RedirectToAction(nameof(Applied));
+            return RedirectToAction(nameof(Vacancies));
         }
     }
 }

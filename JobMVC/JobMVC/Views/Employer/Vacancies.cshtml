@@ -1,147 +1,188 @@
 ﻿@using JobMVC.Models.EmployerModels
 @model List<JobMVC.Models.EmployerModels.Vacancy>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-gray-100">
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<nav class="bg-purple-800">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <button id="menuBtn" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
-                    </svg>
-                    <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="flex flex-shrink-0 items-center">
-                    <img class="block h-8 w-auto lg:hidden" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="Your Company">
-                    <img class="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="Your Company">
-                </div>
-                <div class="hidden sm:ml-6 sm:block">
-                    <div class="flex space-x-4">
-                        <a asp-controller="Employer" asp-action="Vacancies" id="vacancyNav" class="bg-purple-900 text-white px-3 py-2 rounded-md text-sm font-medium">My Vacancies</a>
+<body class="h-full">
+    <div class="min-h-full">
+        <div class="bg-indigo-600 pb-32">
+            <nav class="bg-indigo-600 border-b border-indigo-300 border-opacity-25 lg:border-none">
+                <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+                    <div class="relative h-16 flex items-center justify-between lg:border-b lg:border-indigo-400 lg:border-opacity-25">
+                        <div class="px-2 flex items-center lg:px-0">
+                            <div class="flex-shrink-0">
+                                <img class="block h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-300.svg" alt="Workflow">
+                            </div>
+                            <div class="hidden lg:block lg:ml-10">
+                                <div class="flex space-x-4">
+                                    <a asp-controller="Employer" asp-action="Vacancies" class="bg-indigo-700 text-white rounded-md py-2 px-3 text-sm font-medium" aria-current="page"> Vacancies </a>
 
-                        <a asp-controller="Employer" asp-action="CVs" id="cvNav" class="text-gray-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">CVs</a>
+                                    <a asp-controller="Employer" asp-action="CVs" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 rounded-md py-2 px-3 text-sm font-medium"> CVs </a>
 
-                    </div>
-                </div>
-
-            </div>
-            <div class="flex-1 flex justify-center px-2 lg:ml-6 lg:justify-end">
-                <div class="max-w-lg w-full lg:max-w-xs">
-                    <label for="search" class="sr-only">Search</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <!-- Heroicon name: solid/search -->
-                            <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
-                            </svg>
+                                </div>
+                            </div>
                         </div>
-                        <input id="search" name="search" class="block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-purple-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:bg-white focus:border-white focus:ring-white focus:text-gray-900 sm:text-sm" placeholder="Search" type="search">
-                    </div>
-                </div>
-            </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <div class="relative ml-3">
-                    <div>
-                        <button id="userBtn" type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                            <span class="sr-only">Open user menu</span>
-                            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                        </button>
-                    </div>
-                    <div id="userDiv" class="transform opacity-0 scale-95 absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                        <!-- Active: "bg-gray-100", Not Active: "" -->
-                        <a asp-controller="Employer" asp-action="Settings" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                        <a asp-controller="Employer" asp-action="Index" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-                    </div>
+                        <div class="flex-1 px-2 flex justify-center lg:ml-6 lg:justify-end">
+                            <div class="max-w-lg w-full lg:max-w-xs">
+                                <label for="search" class="sr-only">Search</label>
+                                <div class="relative text-gray-400 focus-within:text-gray-600">
+                                    <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <input id="search" class="block w-full bg-white py-2 pl-10 pr-3 border border-transparent rounded-md leading-5 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white focus:border-white sm:text-sm" placeholder="Search" type="search" name="search">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex lg:hidden">
+                            <!-- Mobile menu button -->
+                            <button type="button" class="bg-indigo-600 p-2 rounded-md inline-flex items-center justify-center text-indigo-200 hover:text-white hover:bg-indigo-500 hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                                <span class="sr-only">Open main menu</span>
+                                <!--
+                                  Heroicon name: outline/menu
 
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden opacity-0 scale-95" id="mobile-menu">
-        <div class="space-y-1 px-2 pt-2 pb-3">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a asp-controller="Employer" asp-action="Vacancies" id="vacancyNav" class="bg-purple-900 text-white px-3 py-2 rounded-md text-sm font-medium">My Vacancies</a>
-
-            <a asp-controller="Employer" asp-action="CVs" id="cvNav" class="text-gray-300 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">CVs</a>
-        </div>
-    </div>
-
-</nav>
-<body class="bg-gray-200">
-<!-- This example requires Tailwind CSS v2.0+ -->
-<ul role="list" class=" px-8 py-16 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-    @foreach (Vacancy vacancy in Model)
-    {
-         <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
-                <div class="flex-1 flex flex-col p-8">
-                    <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
-                    <h3 class="mt-6 text-gray-900 text-sm font-medium">@vacancy.AppUser.FirstName @vacancy.AppUser.LastName</h3>
-                    <dl class="mt-1 flex-grow flex flex-col justify-between">
-                        <dt class="sr-only">Job</dt>
-                        <dd class="text-gray-500 text-sm">@vacancy.JobTitle</dd>
-                        <dt class="sr-only">Salary</dt>
-                        <dd class="mt-3">
-                            <span class="px-2 py-1 text-green-800 text-xs font-medium bg-green-100 rounded-full">@vacancy.MinimumSalary - @vacancy.MaximumSalary</span>
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <div class="-mt-px flex divide-x divide-gray-200">
-                        <div class="w-0 flex-1 flex">
-                            <a asp-controller="Employer" asp-action="Applied" asp-route-id="@vacancy.VacancyId" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+                                  Menu open: "hidden", Menu closed: "block"
+                                -->
+                                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                                 </svg>
-                                <span class="ml-3">Applicants</span>
-                            </a>
-                        </div>
-                        <div class="-ml-px w-0 flex-1 flex">
-                            <a class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/>
+                                <!--
+                                  Heroicon name: outline/x
+
+                                  Menu open: "block", Menu closed: "hidden"
+                                -->
+                                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
-                                <a asp-action="DeleteVacancy" asp-route-id="@vacancy.VacancyId"  class="ml-3">Delete</a>
-                            </a>
+                            </button>
+                        </div>
+                        <div class="hidden lg:block lg:ml-4">
+                            <div class="flex items-center">
+                                <div class="ml-3 relative flex-shrink-0">
+                                    <div>
+                                        <button id="userBtn" type="button" class="bg-indigo-600 rounded-full flex text-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                            <span class="sr-only">Open user menu</span>
+                                            <img class="rounded-full h-8 w-8" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                                        </button>
+                                    </div>
+
+                                    <div id="userDiv" class="transform opacity-0 scale-95 origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                                        <a asp-controller="Employer" asp-action="AddVacancy" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"> Add Vacancy </a>
+
+                                        <a asp-controller="Employer" asp-action="Settings" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1"> Settings </a>
+
+                                        <a asp-controller="Account" asp-action="Signout" class="block py-2 px-4 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2"> Sign out </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </li>
-    }
-   
 
-    <!-- More people... -->
-</ul>
+                <!-- Mobile menu, show/hide based on menu state. -->
+                <div class="lg:hidden" id="mobile-menu">
+                    <div class="px-2 pt-2 pb-3 space-y-1">
+                        <!-- Current: "bg-indigo-700 text-white", Default: "text-white hover:bg-indigo-500 hover:bg-opacity-75" -->
+                        <a asp-controller="Employer" asp-action="CVs" id="vacancyNav" class="bg-indigo-700 text-white block rounded-md py-2 px-3 text-base font-medium" aria-current="page"> Vacancies </a>
+
+                        <a asp-controller="Employer" asp-action="Applied" id="appliedNav" class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md py-2 px-3 text-base font-medium"> My Applications </a>
+
+                    </div>
+                    <div class="pt-4 pb-3 border-t border-indigo-700">
+                        <div class="px-5 flex items-center">
+                            <div class="flex-shrink-0">
+                                <img class="rounded-full h-10 w-10" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-base font-medium text-white">Tom Cook</div>
+                                <div class="text-sm font-medium text-indigo-300">tom@example.com</div>
+                            </div>
+
+                        </div>
+                        <div class="mt-3 px-2 space-y-1">
+                            <a asp-controller="Employer" asp-action="AddVacancy" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75"> Add Vacancy </a>
+
+                            <a asp-controller="Employer" asp-action="Settings" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75"> Settings </a>
+
+                            <a asp-controller="Account" asp-action="Signout" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:bg-indigo-500 hover:bg-opacity-75"> Sign out </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <header class="py-10">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-3xl font-bold text-white">Vacancies</h1>
+                </div>
+            </header>
+        </div>
+
+        <main class="-mt-32">
+            <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+                <div class="bg-gray-200 rounded-lg shadow px-5 py-6 sm:px-6">
+                    <ul role="list" class=" px-8 py-16 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        @foreach (Vacancy vacancy in Model)
+                        {
+                            <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+                                <div class="flex-1 flex flex-col p-8">
+                                    <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                                    <dl class="mt-1 flex-grow flex flex-col justify-between">
+                                        <dt class="sr-only">Job</dt>
+                                        <dd class="text-gray-500 text-sm">@vacancy.JobTitle</dd>
+                                        <dt class="sr-only">Salary</dt>
+                                        <dd class="mt-3">
+                                            <span class="px-2 py-1 text-green-800 text-xs font-medium bg-green-100 rounded-full">@vacancy.MinimumSalary - @vacancy.MaximumSalary</span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div>
+                                    <div class="-mt-px flex divide-x divide-gray-200">
+                                        <div class="w-0 flex-1 flex">
+                                            <a asp-controller="Employer" asp-action="Applied" asp-route-id="@vacancy.VacancyId" class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-bl-lg hover:text-gray-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                                </svg>
+                                                <span class="ml-3">Applicants</span>
+                                            </a>
+                                        </div>
+                                        <div class="-ml-px w-0 flex-1 flex">
+                                            <a asp-action="DeleteVacancy" asp-route-id="@vacancy.VacancyId" class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+                                                <span class="ml-3">Delete</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
 
 
+                        <!-- More people... -->
+                    </ul>
 
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 
 
-<script >
-const {createApp} = Vue;
-createApp({
-    data() {
-      return {
-        message: 'Hello Vue!'
-      }
-    }
-  }).mount('#app')
+<script>
+    const { createApp } = Vue;
+    createApp({
+        data() {
+            return {
+                message: 'Hello Vue!'
+            }
+        }
+    }).mount('#app')
 
 </script>
 
 <script>
 
-    let vacancyNav = document.getElementById('vacancyNav')
-    let cvNav = document.getElementById('cvNav')
     let btn2 = document.getElementById('menuBtn')
     let diV2 = document.getElementById('mobile-menu')
     let okBtn = document.getElementById('okBtn')
@@ -168,19 +209,7 @@ createApp({
         }
     })
 
-    vacancyNav.addEventListener("click", function () {
-        vacancyNav.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
-        vacancyNav.classList.add('bg-gray-900', 'text-white')
-        cvNav.classList.remove('bg-gray-900', 'text-white')
-        cvNav.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
-     })
-
-    cvNav.addEventListener("click", function () {
-        vacancyNav.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
-        vacancyNav.classList.remove('bg-gray-900', 'text-white')
-        cvNav.classList.add('bg-gray-900', 'text-white')
-        cvNav.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
-     })
+   
 
 
     okBtn.addEventListener("click", function () {

@@ -1,44 +1,62 @@
 ﻿@model JobMVC.VMs.EmployerVMs.VacancyVM
-<body class="bg-purple-300">
-<div asp-validation-summary="ModelOnly"></div>
-<form method="post">
-    <div class="content-center bg-purple-300 px-32 py-24">
-        <div class="overflow-hidden bg-purple-700 shadow sm:rounded-lg">
-            <div class="px-4 py-5 sm:px-6">
-                <h3 class="text-lg font-medium leading-6 text-white">Applicant Information</h3>
-                <p class="mt-1 max-w-2xl text-sm text-white">Add the vacancy details below.</p>
+<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-200">
+    <div class="bg-gray-200 pt-48 px-64">
+        <div class="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
+            <div class="md:grid md:grid-cols-2 md:gap-6">
+                <div class="flex">
+                    <img class="h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Jobbie">
+                    <h2 class="ml-3 text-3xl font-extrabold text-gray-900">Add Vacancy</h2>
+
+                </div>
+                <div class="mt-5 md:mt-0 md:col-span-2">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <form method="POST">
+                        <div class="grid grid-cols-6 gap-6">
+                            <div class="col-span-6 sm:col-span-2">
+                                <label for="JobTitle" class="block text-sm font-medium text-gray-700">Title (Job) <span class="text-red-500">*</span></label>
+                                <input asp-for="JobTitle" type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <span class="text-red-600" asp-validation-for="JobTitle"></span>
+                            </div>
+                            <div class="col-span-6 sm:col-span-2">
+                                <label for="MinimumSalary" class="block text-sm font-medium text-gray-700">Minimum salary <span class="text-red-500">*</span></label>
+                                <input asp-for="MinimumSalary" type="number" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <span class="text-red-600" asp-validation-for="MinimumSalary"></span>
+                            </div>
+                            <div class="col-span-6 sm:col-span-2">
+                                <label for="MaximumSalary" class="block text-sm font-medium text-gray-700">Maximum salary <span class="text-red-500">*</span></label>
+                                <input asp-for="MaximumSalary" type="number" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <span class="text-red-600" asp-validation-for="MaximumSalary"></span>
+                            </div>
+                            <div class="place-items-center col-span-6 sm:col-span-3">
+                                <label for="about" class=" block text-sm font-medium text-gray-700">Description <span class="text-red-500">*</span></label>
+                                <div class="mt-1">
+                                    <textarea asp-for="JobDescription" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
+                                    <span class="text-red-600" asp-validation-for="JobDescription"></span>
+                                </div>
+                            </div>
+
+                            <div class="place-items-center col-span-6 sm:col-span-3">
+                                <label for="about" class=" block text-sm font-medium text-gray-700">Requirements <span class="text-red-500">*</span></label>
+                                <div class="mt-1">
+                                    <textarea asp-for="JobRequirements" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
+                                    <span class="text-red-600" asp-validation-for="JobRequirements"></span>
+                                </div>
+                            </div>
+
+                        </div>
+            <div class=" mt-8 flex justify-end">
+                <a asp-controller="Employee" asp-action="Vacancies" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancel</a>
+                <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
             </div>
-            <div class="border-t border-gray-200">
-                <dl>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Job</dt>
-                        <input asp-for="JobTitle" type="text" >
-                        <span class="text-red-600" asp-validation-for="JobTitle"></span>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Minimum salary</dt>
-                        <input asp-for="MinimumSalary" type="text" >
-                        <span class="text-red-600" asp-validation-for="MinimumSalary"></span>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Maximum salary</dt>
-                        <input asp-for="MaximumSalary" type="text" >
-                        <span class="text-red-600" asp-validation-for="MaximumSalary"></span>
-                    </div>
-                    <div class="bg-purple-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Description</dt>
-                        <input asp-for="JobDescription" type="text" >
-                        <span class="text-red-600" asp-validation-for="JobDescription"></span>
-                    </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt class="text-sm font-medium text-gray-500">Requirements</dt>
-                        <input asp-for="JobRequirements" type="text" >
-                        <span class="text-red-600" asp-validation-for="JobRequirements"></span>
-                    </div>
-                </dl>
+                    </form>
+                </div>
             </div>
         </div>
-        <button class="my-4 inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit"> Save </button>
+
     </div>
-</form>
 </body>
+</html>

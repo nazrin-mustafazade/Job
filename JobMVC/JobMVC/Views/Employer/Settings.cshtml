@@ -122,40 +122,7 @@
         </div>
     </div>
 
-    <!-- Type Update -->
-    <div id="popupType" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-            <div class="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-                <div>
-                    <fieldset class="mt-4">
-                        <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
-                            <div class="flex items-center">
-                                <input id="asc" name="company-type" type="radio" checked class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="company-type" class="ml-3 block text-sm font-medium text-gray-700"> ASC </label>
-                            </div>
-
-                            <div class="flex items-center">
-                                <input id="mmc" name="company-type" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="company-type" class="ml-3 block text-sm font-medium text-gray-700"> MMC </label>
-                            </div>
-                            <div class="flex items-center">
-                                <input id="other" name="company-type" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                <label for="company-type" class="ml-3 block text-sm font-medium text-gray-700"> Other </label>
-                            </div>
-
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
-                    <button type="button" class="saveBtn w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm">Save</button>
-                    <button type="button" class="cancelBtn mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <!-- Date Update -->
+    <!-- Date Update -->
     <div id="popupDate" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
@@ -220,15 +187,6 @@
                                                 </dd>
                                             </div>
                                             <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                                                <dt class="text-sm font-medium text-gray-500">Company Type</dt>
-                                                <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                                    <span class="flex-grow">MMC</span>
-                                                    <span class="ml-4 flex-shrink-0">
-                                                        <button id="typeBtn" type="button" class=" bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Update</button>
-                                                    </span>
-                                                </dd>
-                                            </div>
-                                             <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                                 <dt class="text-sm font-medium text-gray-500">Employee Size</dt>
                                                 <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                                     <span class="flex-grow">5555</span>
@@ -237,7 +195,7 @@
                                                     </span>
                                                 </dd>
                                             </div>
-                                            
+
                                             <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                                 <dt class="text-sm font-medium text-gray-500">Establish date</dt>
                                                 <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
@@ -333,7 +291,6 @@
                                 </div>
 
                                 <script>
-                                    let typeBtn = document.getElementById('typeBtn')
                                     let passwordBtn = document.getElementById('updatePassBtn')
                                     let countryBtn = document.getElementById('updateCounBtn')
                                     let phoneBtn = document.getElementById('updatePhoneBtn')
@@ -345,7 +302,7 @@
                                     let pswrdPop = document.getElementById('popupPswrd')
                                     let counPop = document.getElementById('popupCount')
                                     let phonePop = document.getElementById('popupPhone')
-                                    let typePop = document.getElementById('popupType')
+
 
                                     document.querySelectorAll('.updateBtn').forEach(item => {
                                         item.addEventListener('click', event => {
@@ -392,11 +349,6 @@
 
                                     })
 
-                                    typeBtn.addEventListener("click", function () {
-                                        typePop.classList.remove('hidden')
-
-                                    })
-
                                     countryBtn.addEventListener("click", function () {
                                         counPop.classList.remove('hidden')
 
@@ -435,7 +387,7 @@
             </main>
         </div>
     </div>
-    
+
 </body>
 
 </html>

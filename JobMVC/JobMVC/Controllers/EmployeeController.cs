@@ -42,6 +42,7 @@ namespace JobMVC.Controllers
         {
             return View();
         }
+        
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddCv(CvVM cvVm)
@@ -67,7 +68,7 @@ namespace JobMVC.Controllers
             userSession.Cv = cv;
             await _dbContext.Cvs.AddAsync(cv);
             await _dbContext.SaveChangesAsync();
-            return RedirectToAction(nameof(DetailsCv));
+            return RedirectToAction(nameof(Vacancies));
         }
         public async Task<IActionResult> Applied()
         {
@@ -106,7 +107,7 @@ namespace JobMVC.Controllers
         public async Task<IActionResult> DetailsCv(string id)
         {
             AppUser user = await _userManager.FindByIdAsync(id);
-            Cv? cv = await _dbContext.Cvs.FirstOrDefaultAsync(cv => cv.AppUserId == user.Id);
+            Cv? cv = await _dbContext.Cvs.Include(c=>c.AppUser).FirstOrDefaultAsync(cv => cv.AppUser.Id == user.Id);
             if (cv is null) return RedirectToAction(nameof(AddCv));
             return View(cv);
         }

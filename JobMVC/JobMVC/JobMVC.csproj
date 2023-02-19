@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\images\1.PNG2b2c451f-db4d-4154-884d-35058a2b2ede" />
+    <Content Remove="wwwroot\images\1.PNG87fdd699-b73c-45e6-99b2-011e919b258e" />
+    <Content Remove="wwwroot\images\1.PNG8ab230ad-f497-42b8-bcf7-dd013a9056e6" />
+    <Content Remove="wwwroot\images\1.PNG8d591a54-9048-472c-8932-ac3e8ada9214" />
+    <Content Remove="wwwroot\images\1.PNGb9003321-cb0c-463c-8a68-46c703b01b60" />
+    <Content Remove="wwwroot\images\1.PNGe4f7d1fd-f335-486d-bcb5-8c825ffbd3e8" />
+    <Content Remove="wwwroot\images\2.PNG7cd0c4a9-8d92-4ff6-a065-167fbf142f2c" />
+  </ItemGroup>
+
+  <ItemGroup>
 
     <Folder Include="Data\" />
 
@@ -14,7 +24,6 @@
 
     <Folder Include="wwwroot\css\" />
     <Folder Include="Models\Identity\" />
-    <Folder Include="wwwroot\images" />
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
     <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
@@ -41,6 +50,15 @@
     <Folder Include="DataAccessLayer\" />
     <Folder Include="Models\EmployerModels\" />
     <Folder Include="Models\EmployeeModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\1.PNG2b2c451f-db4d-4154-884d-35058a2b2ede" />
+    <None Include="wwwroot\images\1.PNG87fdd699-b73c-45e6-99b2-011e919b258e" />
+    <None Include="wwwroot\images\1.PNG8ab230ad-f497-42b8-bcf7-dd013a9056e6" />
+    <None Include="wwwroot\images\1.PNG8d591a54-9048-472c-8932-ac3e8ada9214" />
+    <None Include="wwwroot\images\1.PNGb9003321-cb0c-463c-8a68-46c703b01b60" />
+    <None Include="wwwroot\images\1.PNGe4f7d1fd-f335-486d-bcb5-8c825ffbd3e8" />
+    <None Include="wwwroot\images\2.PNG7cd0c4a9-8d92-4ff6-a065-167fbf142f2c" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
