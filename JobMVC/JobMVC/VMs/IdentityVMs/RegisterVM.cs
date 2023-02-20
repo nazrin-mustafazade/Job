@@ -31,11 +31,7 @@ public class RegisterVM {
     
     [Required]
     public string City { get; set; }
-    
-    [Required]
-    public string Zip { get; set; }
-    
-    [Required]
+
     public string State { get; set; }
     
     public IFormFile ImageProfile { get; set; }

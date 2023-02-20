@@ -1,7 +1,6 @@
 ﻿using JobMVC.DataAccessLayer;
 using JobMVC.Models;
 using JobMVC.Models.EmployerModels;
-using JobMVC.Models.Enums;
 using JobMVC.Models.Identity;
 using JobMVC.VMs.EmployeeVMs;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JobMVC.Controllers
 {
-    
+
     public class EmployeeController : Controller
     {
         private readonly AppDbContext _dbContext;
@@ -28,26 +27,27 @@ namespace JobMVC.Controllers
             return View();
         }
         [HttpGet]
-        
+
         public async Task<IActionResult> MyCV()
         {
             AppUser userSession = await _userManager.FindByNameAsync(User.Identity?.Name);
-            Cv cv =  new Cv();
+            Cv cv = new Cv();
             return View(cv);
         }
-        
+
         [Authorize]
         [HttpGet]
         public IActionResult AddCv()
         {
             return View();
         }
-        
+
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddCv(CvVM cvVm)
         {
-            
+            if (cvVm.About is null || cvVm.Education is null || cvVm.Skills is null ||
+                cvVm.Experiences is null || cvVm.Languages is null ) return View();
             AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
             
             Cv cv = new Cv()
@@ -60,7 +60,6 @@ namespace JobMVC.Controllers
                 Experiences = cvVm.Experiences,
                 Languages = cvVm.Languages,
                 Fullname = userSession.FirstName + " " + userSession.LastName,
-                Email = userSession.Email,
                 AppUser = userSession,
                 AppUserId = userSession.Id
         
@@ -73,7 +72,7 @@ namespace JobMVC.Controllers
         public async Task<IActionResult> Applied()
         {
             AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
-            List<Vacancy> vacancies = _dbContext.Vacancies.Include(v=> v.AcceptedEmployees).ThenInclude(ae=>ae.Employees).Include(v=>v.AppUser).Include(v => v.Applicant).ThenInclude(a => a.AppUsers)
+            List<Vacancy> vacancies = _dbContext.Vacancies.Include(v=> v.AcceptedEmployee).Include(v=>v.AppUser).Include(v => v.Applicant).ThenInclude(a => a.AppUsers)
                 .Where(v => v.Applicant.AppUsers.Contains(userSession)).ToList();
             VacancyAppliedEmployee vm = new VacancyAppliedEmployee()
             {
@@ -145,6 +144,19 @@ namespace JobMVC.Controllers
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Applied));
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> TakedownFromVacancy(int id)
+        {
+            AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
+            Vacancy? vacancy = _dbContext.Vacancies.Include(v => v.Applicant).ThenInclude(a => a.AppUsers).FirstOrDefault(v => v.VacancyId == id);
+            if (vacancy == null) return View();
+            vacancy.Applicant.AppUsers.Remove(userSession);
+            await _dbContext.SaveChangesAsync();
+            return RedirectToAction(nameof(Applied));
+        }
+
 
         public IActionResult Settings()
         {

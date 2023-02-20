@@ -1,5 +1,6 @@
 ﻿@using JobMVC.Models.EmployerModels
-@model List<JobMVC.Models.EmployerModels.Vacancy>
+@using JobMVC.VMs.EmployerVMs
+@model VacancyEmployerVM
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-gray-100">
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -63,7 +64,7 @@
                                     <div>
                                         <button id="userBtn" type="button" class="bg-indigo-600 rounded-full flex text-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-600 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                             <span class="sr-only">Open user menu</span>
-                                            <img class="rounded-full h-8 w-8" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                                            <img class="rounded-full h-8 w-8" src="~/images/@Model.Employer.ImageUrl" alt="">
                                         </button>
                                     </div>
 
@@ -92,7 +93,7 @@
                     <div class="pt-4 pb-3 border-t border-indigo-700">
                         <div class="px-5 flex items-center">
                             <div class="flex-shrink-0">
-                                <img class="rounded-full h-10 w-10" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                <img class="rounded-full h-10 w-10" src="~/images/@Model.Employer.ImageUrl" alt="">
                             </div>
                             <div class="ml-3">
                                 <div class="text-base font-medium text-white">Tom Cook</div>
@@ -121,11 +122,11 @@
             <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
                 <div class="bg-gray-200 rounded-lg shadow px-5 py-6 sm:px-6">
                     <ul role="list" class=" px-8 py-16 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                        @foreach (Vacancy vacancy in Model)
+                        @foreach (Vacancy vacancy in Model.Vacancies)
                         {
                             <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
                                 <div class="flex-1 flex flex-col p-8">
-                                    <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
+                                    <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="~/images/@Model.Employer.ImageUrl" alt="">
                                     <dl class="mt-1 flex-grow flex flex-col justify-between">
                                         <dt class="sr-only">Job</dt>
                                         <dd class="text-gray-500 text-sm">@vacancy.JobTitle</dd>

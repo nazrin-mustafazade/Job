@@ -20,8 +20,6 @@
 
     <Folder Include="Data\" />
 
-    <Folder Include="Models\" />
-
     <Folder Include="wwwroot\css\" />
     <Folder Include="Models\Identity\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
@@ -48,8 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccessLayer\" />
-    <Folder Include="Models\EmployerModels\" />
-    <Folder Include="Models\EmployeeModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\images\1.PNG2b2c451f-db4d-4154-884d-35058a2b2ede" />

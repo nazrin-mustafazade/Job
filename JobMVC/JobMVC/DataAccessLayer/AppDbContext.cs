@@ -2,7 +2,6 @@
 using JobMVC.Models;
 using JobMVC.Models.EmployerModels;
 using JobMVC.Models.Identity;
-using JobMVC.Views.Employee;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -21,14 +20,13 @@ namespace JobMVC.DataAccessLayer
 		public DbSet<Vacancy> Vacancies { get; set; }
 		public DbSet<Applicant> Applicants { get; set; }
 		
-		public DbSet<AcceptedEmployees> AcceptedEmployees { get; set; }
 
         public class YourDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
         {
             public AppDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-                optionsBuilder.UseNpgsql("Server=localhost;Database=CourseWorkJob;Uid=postgres;Password=Promises00;");
+                optionsBuilder.UseNpgsql("Server=localhost;Database=CourseWorkJob1;Uid=postgres;Password=Promises00;");
 
                 return new AppDbContext(optionsBuilder.Options);
             }

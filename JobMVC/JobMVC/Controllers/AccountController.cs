@@ -78,7 +78,6 @@ namespace JobMVC.Controllers
                 PhoneNumber = registerVm.PhoneNumber,
                 Address = registerVm.Address,
                 State = registerVm.State,
-                Zip = registerVm.Zip,
                 Email = registerVm.Email,
                 UserName = registerVm.Email,
                 City = registerVm.City,
@@ -135,7 +134,6 @@ namespace JobMVC.Controllers
                 Address = registerEmployerVm.Address,
                 City = registerEmployerVm.City,
                 State = registerEmployerVm.State,
-                Zip = registerEmployerVm.Zip,
                 ImageUrl = newFileName
             };
             IdentityResult employerCreate = await _userManager.CreateAsync(createdEmployer, registerEmployerVm.Password);

@@ -121,12 +121,12 @@
                 {
                     <li class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
                         <div class="flex-1 flex flex-col p-8">
-                            <button class="pl-64" type="button">
+                            <a asp-controller="Employee" asp-action="TakedownFromVacancy" asp-route-id="@vacancy.VacancyId" class="pl-32" type="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
 
-                            </button>
+                            </a>
                             <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="">
 
                             <h3 class="mt-6 text-gray-900 text-sm font-medium">@vacancy.AppUser.Company</h3>
@@ -142,7 +142,7 @@
                         <div>
                             <div class="-mt-px flex divide-x divide-gray-200">
                                 <div class="w-0 flex-1 flex">
-                                    @if (vacancy.AcceptedEmployees.Employees.Contains(Model.Employee))
+                                    @if (vacancy.AcceptedEmployee.Equals(Model.Employee))
                                     {
                                         <p class="relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-green-700 font-medium border border-transparent rounded-bl-lg">
                                             <!-- Heroicon name: solid/mail -->
