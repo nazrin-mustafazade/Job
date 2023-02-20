@@ -17,7 +17,7 @@ public class Cv
     public string Experiences { get; set; }
     public string Languages { get; set; }
 
-    public string Contact { get; set; }
+    public string? Contact { get; set; }
 
     //one to one relation 
 
