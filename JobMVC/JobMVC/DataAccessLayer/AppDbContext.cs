@@ -19,14 +19,15 @@ namespace JobMVC.DataAccessLayer
 		public DbSet<Cv> Cvs { get; set; }
 		public DbSet<Vacancy> Vacancies { get; set; }
 		public DbSet<Applicant> Applicants { get; set; }
-		
+		public DbSet<InterviewedEmployees> InterviewedEmployees { get; set; }
+		public DbSet<RejectedEmployees> RejectedEmployees { get; set; }
 
         public class YourDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
         {
             public AppDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-                optionsBuilder.UseNpgsql("Server=localhost;Database=CourseWorkJob1;Uid=postgres;Password=Promises00;");
+                optionsBuilder.UseNpgsql("Server=localhost;Database=CourseWorkJob1;Uid=postgres;Password=OnyxOrion01;");
 
                 return new AppDbContext(optionsBuilder.Options);
             }

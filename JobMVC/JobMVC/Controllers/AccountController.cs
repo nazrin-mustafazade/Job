@@ -110,11 +110,11 @@ namespace JobMVC.Controllers
             string newFileName = "";
             if (file.FileName.Length > 50)
             {
-                newFileName = file.FileName.Substring(40);
+                newFileName = file.FileName.Substring(40) + ".jpg";
             }
             else
             {
-                newFileName = file.FileName + Guid.NewGuid().ToString();
+                newFileName =  Guid.NewGuid().ToString() + ".jpg";
             }
             
             using (var writer = new FileStream(@"wwwroot/images/"+ newFileName, FileMode.Create))

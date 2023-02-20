@@ -125,6 +125,25 @@ namespace JobMVC.Migrations
                     b.ToTable("InterviewedEmployees");
                 });
 
+            modelBuilder.Entity("JobMVC.Models.EmployerModels.RejectedEmployees", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("VacancyId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VacancyId")
+                        .IsUnique();
+
+                    b.ToTable("RejectedEmployees");
+                });
+
             modelBuilder.Entity("JobMVC.Models.EmployerModels.Vacancy", b =>
                 {
                     b.Property<int>("VacancyId")
@@ -441,6 +460,9 @@ namespace JobMVC.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
+                    b.Property<int?>("RejectedEmployeesId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("State")
                         .HasColumnType("text");
 
@@ -451,6 +473,8 @@ namespace JobMVC.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasIndex("InterviewedEmployeesId");
+
+                    b.HasIndex("RejectedEmployeesId");
 
                     b.HasDiscriminator().HasValue("AppUser");
                 });
@@ -486,6 +510,17 @@ namespace JobMVC.Migrations
                     b.HasOne("JobMVC.Models.EmployerModels.Vacancy", "Vacancy")
                         .WithOne("InterviewedEmployees")
                         .HasForeignKey("JobMVC.Models.EmployerModels.InterviewedEmployees", "VacancyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Vacancy");
+                });
+
+            modelBuilder.Entity("JobMVC.Models.EmployerModels.RejectedEmployees", b =>
+                {
+                    b.HasOne("JobMVC.Models.EmployerModels.Vacancy", "Vacancy")
+                        .WithOne("RejectedEmployees")
+                        .HasForeignKey("JobMVC.Models.EmployerModels.RejectedEmployees", "VacancyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -573,6 +608,10 @@ namespace JobMVC.Migrations
                     b.HasOne("JobMVC.Models.EmployerModels.InterviewedEmployees", null)
                         .WithMany("Employees")
                         .HasForeignKey("InterviewedEmployeesId");
+
+                    b.HasOne("JobMVC.Models.EmployerModels.RejectedEmployees", null)
+                        .WithMany("Employees")
+                        .HasForeignKey("RejectedEmployeesId");
                 });
 
             modelBuilder.Entity("JobMVC.Models.Applicant", b =>
@@ -586,9 +625,17 @@ namespace JobMVC.Migrations
                     b.Navigation("Employees");
                 });
 
+            modelBuilder.Entity("JobMVC.Models.EmployerModels.RejectedEmployees", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
             modelBuilder.Entity("JobMVC.Models.EmployerModels.Vacancy", b =>
                 {
                     b.Navigation("InterviewedEmployees")
+                        .IsRequired();
+
+                    b.Navigation("RejectedEmployees")
                         .IsRequired();
                 });
 

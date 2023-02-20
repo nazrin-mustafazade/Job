@@ -49,6 +49,14 @@ namespace JobMVC.Controllers
                 MaximumSalary = vacancyVm.MaximumSalary,
                 AppUser = userSession,
                 AppUserId = userSession.Id,
+                InterviewedEmployees = new InterviewedEmployees()
+                {
+                    Employees = new List<AppUser>()
+                },
+                RejectedEmployees = new RejectedEmployees()
+                {
+                    Employees = new List<AppUser>()
+                }
             };
             applicant.Vacancy = vacancy;
             vacancy.Applicant = applicant;
@@ -61,9 +69,9 @@ namespace JobMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> DeleteVacancy(int id)
         {
-            Vacancy deletedVacancy = await _dbContext.Vacancies.FindAsync(id);
+            Vacancy deletedVacancy = await _dbContext.Vacancies.FirstOrDefaultAsync(v=> v.VacancyId == id);
+            if (deletedVacancy is null) return RedirectToAction(nameof(Vacancies));
             _dbContext.Vacancies.Remove(deletedVacancy);
-            await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Vacancies));
 
         }
@@ -106,6 +114,9 @@ namespace JobMVC.Controllers
         public IActionResult Applied(int id)
         {
             var vacancy = _dbContext.Vacancies.Include(v => v.Applicant).ThenInclude(a => a.AppUsers)
+                .Include(v=> v.InterviewedEmployees).ThenInclude(ie=> ie.Employees)
+                .Include(v=> v.AcceptedEmployee)
+                .Include(v=>v.RejectedEmployees).ThenInclude(re=>re.Employees)
                 .FirstOrDefault(v => v.VacancyId == id);
             List<AppUser> users = vacancy.Applicant.AppUsers.ToList();
             VacancyEmployeeVM vacancyEmployeeVm = new VacancyEmployeeVM()
@@ -123,7 +134,7 @@ namespace JobMVC.Controllers
             Vacancy? vacancy =  _dbContext.Vacancies.Include(v => v.AcceptedEmployee)
                 .FirstOrDefault(v => v.VacancyId == vacancyid);
             if (vacancy == null) return RedirectToAction(nameof(Vacancies));
-            if (!(vacancy.AcceptedEmployee is null)) return View();
+            if (!(vacancy.AcceptedEmployee is null)) return BadRequest();
             vacancy.AcceptedEmployee=user;
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Vacancies));
@@ -136,8 +147,45 @@ namespace JobMVC.Controllers
             Vacancy vacancy = _dbContext.Vacancies.Include(v => v.AcceptedEmployee)
                 .Include(v=>v.InterviewedEmployees).ThenInclude(ie=>ie.Employees)
                 .FirstOrDefault(v => v.VacancyId == vacancyid);
-            if (vacancy.InterviewedEmployees.Employees.Contains(user)) return View();
+            if (vacancy.InterviewedEmployees is null)
+            {
+                vacancy.InterviewedEmployees = new InterviewedEmployees()
+                {
+                    Employees = new List<AppUser>()
+                };
+            }
+            if (vacancy.InterviewedEmployees.Employees.Contains(user)) return BadRequest();
             vacancy.InterviewedEmployees.Employees.Add(user);
+            await _dbContext.SaveChangesAsync();
+            return RedirectToAction(nameof(Vacancies));
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> RejectEmployee(string id, int vacancyid)
+        {
+            AppUser user = await  _userManager.FindByIdAsync(id);
+            Vacancy? vacancy =  _dbContext.Vacancies.Include(v => v.AcceptedEmployee)
+                .Include(v=>v.InterviewedEmployees).ThenInclude(ie=> ie.Employees)
+                .Include(v=> v.RejectedEmployees).ThenInclude(re=> re.Employees)
+                .FirstOrDefault(v => v.VacancyId == vacancyid);
+            if (vacancy == null) return RedirectToAction(nameof(Vacancies));
+            if (vacancy.InterviewedEmployees is null)
+            {
+                vacancy.InterviewedEmployees = new InterviewedEmployees()
+                {
+                    Employees = new List<AppUser>()
+                };
+            }
+
+            if (vacancy.RejectedEmployees is null)
+            {
+                vacancy.RejectedEmployees = new RejectedEmployees()
+                {
+                    Employees = new List<AppUser>()
+                };
+            }
+            vacancy.InterviewedEmployees.Employees.Remove(user);
+            vacancy.RejectedEmployees.Employees.Add(user);
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Vacancies));
         }

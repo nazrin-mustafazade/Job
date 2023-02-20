@@ -26,5 +26,6 @@ public class Vacancy
     public string? AcceptedEmployeeId { get; set; } 
     public AppUser? AcceptedEmployee { get; set; }
     public InterviewedEmployees InterviewedEmployees { get; set; }
+    public RejectedEmployees RejectedEmployees { get; set; }
     // public virtual ICollection<Applicant> Applicants { get; set; }
 }

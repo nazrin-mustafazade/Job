@@ -72,7 +72,12 @@ namespace JobMVC.Controllers
         public async Task<IActionResult> Applied()
         {
             AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
-            List<Vacancy> vacancies = _dbContext.Vacancies.Include(v=> v.AcceptedEmployee).Include(v=>v.AppUser).Include(v => v.Applicant).ThenInclude(a => a.AppUsers)
+            List<Vacancy> vacancies = _dbContext.Vacancies.Include(v=> v.InterviewedEmployees).ThenInclude(ie=> ie.Employees)
+                .Include(v=> v.AcceptedEmployee)
+                .Include(v=>v.AppUser)
+                .Include(v => v.Applicant).ThenInclude(a => a.AppUsers)
+                .Include(v=> v.InterviewedEmployees).ThenInclude(ie=> ie.Employees)
+                .Include(v=> v.RejectedEmployees).ThenInclude(re=> re.Employees)
                 .Where(v => v.Applicant.AppUsers.Contains(userSession)).ToList();
             VacancyAppliedEmployee vm = new VacancyAppliedEmployee()
             {
@@ -111,34 +116,35 @@ namespace JobMVC.Controllers
             return View(cv);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> UpdateCv()
-        {
-            AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
-            Cv? cv = await _dbContext.Cvs.FirstOrDefaultAsync(cv => cv.AppUserId == userSession.Id);
-            if (cv is null) RedirectToAction(nameof(AddCv));
-            return View(cv);
-        }
-        [HttpPost]
-        public async Task<IActionResult> UpdateCv(CvVM cvVm)
-        {
-            AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
-            Cv? oldCv = await _dbContext.Cvs.FirstOrDefaultAsync(cv => cv.AppUserId == userSession.Id);
-            oldCv.About = cvVm.About;
-            oldCv.MinimumSalary = cvVm.MinimumSalary;
-            oldCv.MaximumSalary = cvVm.MaximumSalary;
-            oldCv.Education = cvVm.Education;
-            oldCv.Skills = cvVm.Skills;
-            oldCv.Languages = cvVm.Languages;
-            await _dbContext.SaveChangesAsync();
-            return RedirectToAction(nameof(DetailsCv));
-
-        }
+        // [HttpGet]
+        // public async Task<IActionResult> UpdateCv()
+        // {
+        //     AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
+        //     Cv? cv = await _dbContext.Cvs.FirstOrDefaultAsync(cv => cv.AppUserId == userSession.Id);
+        //     if (cv is null) RedirectToAction(nameof(AddCv));
+        //     return View(cv);
+        // }
+        // [HttpPost]
+        // public async Task<IActionResult> UpdateCv(CvVM cvVm)
+        // {
+        //     AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
+        //     Cv? oldCv = await _dbContext.Cvs.FirstOrDefaultAsync(cv => cv.AppUserId == userSession.Id);
+        //     oldCv.About = cvVm.About;
+        //     oldCv.MinimumSalary = cvVm.MinimumSalary;
+        //     oldCv.MaximumSalary = cvVm.MaximumSalary;
+        //     oldCv.Education = cvVm.Education;
+        //     oldCv.Skills = cvVm.Skills;
+        //     oldCv.Languages = cvVm.Languages;
+        //     await _dbContext.SaveChangesAsync();
+        //     return RedirectToAction(nameof(DetailsCv));
+        //
+        // }
 
         [HttpGet]
         public async Task<IActionResult> ApplyToVacancy(int id)
         {
             AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (userSession.Cv is null) return  RedirectToAction(nameof(AddCv));
             Vacancy? vacancy = _dbContext.Vacancies.Include(v => v.Applicant).ThenInclude(a => a.AppUsers).FirstOrDefault(v=>v.VacancyId == id);
             vacancy.Applicant.AppUsers.Add(userSession);
             await _dbContext.SaveChangesAsync();
@@ -150,9 +156,14 @@ namespace JobMVC.Controllers
         public async Task<IActionResult> TakedownFromVacancy(int id)
         {
             AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
-            Vacancy? vacancy = _dbContext.Vacancies.Include(v => v.Applicant).ThenInclude(a => a.AppUsers).FirstOrDefault(v => v.VacancyId == id);
-            if (vacancy == null) return View();
+            Vacancy? vacancy = _dbContext.Vacancies.Include(v => v.Applicant).ThenInclude(a => a.AppUsers)
+                .Include(v=> v.InterviewedEmployees).ThenInclude(ie=>ie.Employees)
+                .Include(v=> v.RejectedEmployees).ThenInclude(re=> re.Employees)
+                .FirstOrDefault(v => v.VacancyId == id);
+            if (vacancy == null) return RedirectToAction(nameof(Applied));
             vacancy.Applicant.AppUsers.Remove(userSession);
+            vacancy.InterviewedEmployees.Employees.Remove(userSession);
+            vacancy.RejectedEmployees.Employees.Remove(userSession);
             await _dbContext.SaveChangesAsync();
             return RedirectToAction(nameof(Applied));
         }
