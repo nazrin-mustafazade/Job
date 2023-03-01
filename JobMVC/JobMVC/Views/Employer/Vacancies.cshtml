@@ -184,7 +184,6 @@
 
 <script>
 
-    let btn2 = document.getElementById('menuBtn')
     let diV2 = document.getElementById('mobile-menu')
     let okBtn = document.getElementById('okBtn')
     let backDiv = document.getElementById('backDiv')
@@ -200,19 +199,7 @@
             diV.classList.remove('opacity-100', 'scale-100')
         }
     })
-    btn2.addEventListener("click", function () {
-        if (diV2.classList.contains('opacity-0', 'scale-95')) {
-            diV2.classList.remove('opacity-0', 'scale-95')
-            diV2.classList.add('opacity-100', 'scale-100', 'duration-150', 'ease-out')
-        } else {
-            diV2.classList.add('opacity-0', 'scale-95', 'duration-100', 'ease-in')
-            diV2.classList.remove('opacity-100', 'scale-100')
-        }
-    })
-
-   
-
-
+    
     okBtn.addEventListener("click", function () {
         applyDiv.classList.add('hidden')
         backDiv.classList.add('opacity-0', 'ease-in', 'duration-200')

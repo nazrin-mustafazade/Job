@@ -27,7 +27,7 @@ namespace JobMVC.DataAccessLayer
             public AppDbContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-                optionsBuilder.UseNpgsql("Server=localhost;Database=CourseWorkJob1;Uid=postgres;Password=OnyxOrion01;");
+                optionsBuilder.UseNpgsql("Server=localhost;Database=CourseWorkJob2;Uid=postgres;Password=Promises00;");
 
                 return new AppDbContext(optionsBuilder.Options);
             }

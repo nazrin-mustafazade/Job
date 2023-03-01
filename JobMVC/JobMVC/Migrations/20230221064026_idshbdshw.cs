@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace JobMVC.Migrations
 {
-    public partial class asd : Migration
+    public partial class idshbdshw : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -148,6 +148,7 @@ namespace JobMVC.Migrations
                     IsAdmin = table.Column<bool>(type: "boolean", nullable: true),
                     IsEmployer = table.Column<bool>(type: "boolean", nullable: true),
                     InterviewedEmployeesId = table.Column<int>(type: "integer", nullable: true),
+                    RejectedEmployeesId = table.Column<int>(type: "integer", nullable: true),
                     UserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
@@ -195,7 +196,7 @@ namespace JobMVC.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Fullname = table.Column<string>(type: "text", nullable: false),
-                    JobTitle = table.Column<string>(type: "text", nullable: false),
+                    JobTitle = table.Column<string>(type: "text", nullable: true),
                     About = table.Column<string>(type: "text", nullable: false),
                     MinimumSalary = table.Column<decimal>(type: "numeric", nullable: false),
                     MaximumSalary = table.Column<decimal>(type: "numeric", nullable: false),
@@ -203,7 +204,7 @@ namespace JobMVC.Migrations
                     Skills = table.Column<string>(type: "text", nullable: false),
                     Experiences = table.Column<string>(type: "text", nullable: false),
                     Languages = table.Column<string>(type: "text", nullable: false),
-                    Contact = table.Column<string>(type: "text", nullable: false),
+                    Contact = table.Column<string>(type: "text", nullable: true),
                     AppUserId = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
@@ -274,6 +275,25 @@ namespace JobMVC.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "RejectedEmployees",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    VacancyId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RejectedEmployees", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RejectedEmployees_Vacancies_VacancyId",
+                        column: x => x.VacancyId,
+                        principalTable: "Vacancies",
+                        principalColumn: "VacancyId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AppUserApplicant_ApplicantsId",
                 table: "AppUserApplicant",
@@ -316,6 +336,11 @@ namespace JobMVC.Migrations
                 column: "InterviewedEmployeesId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_RejectedEmployeesId",
+                table: "AspNetUsers",
+                column: "RejectedEmployeesId");
+
+            migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
@@ -330,6 +355,12 @@ namespace JobMVC.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_InterviewedEmployees_VacancyId",
                 table: "InterviewedEmployees",
+                column: "VacancyId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RejectedEmployees_VacancyId",
+                table: "RejectedEmployees",
                 column: "VacancyId",
                 unique: true);
 
@@ -387,6 +418,13 @@ namespace JobMVC.Migrations
                 column: "InterviewedEmployeesId",
                 principalTable: "InterviewedEmployees",
                 principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_AspNetUsers_RejectedEmployees_RejectedEmployeesId",
+                table: "AspNetUsers",
+                column: "RejectedEmployeesId",
+                principalTable: "RejectedEmployees",
+                principalColumn: "Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -435,6 +473,9 @@ namespace JobMVC.Migrations
 
             migrationBuilder.DropTable(
                 name: "InterviewedEmployees");
+
+            migrationBuilder.DropTable(
+                name: "RejectedEmployees");
 
             migrationBuilder.DropTable(
                 name: "Vacancies");

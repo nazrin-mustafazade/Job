@@ -144,7 +144,7 @@ namespace JobMVC.Controllers
         public async Task<IActionResult> ApplyToVacancy(int id)
         {
             AppUser userSession = await _userManager.FindByNameAsync(User.Identity.Name);
-            if (userSession.Cv is null) return  RedirectToAction(nameof(AddCv));
+            //if (userSession.Cv is null) return  RedirectToAction(nameof(AddCv));
             Vacancy? vacancy = _dbContext.Vacancies.Include(v => v.Applicant).ThenInclude(a => a.AppUsers).FirstOrDefault(v=>v.VacancyId == id);
             vacancy.Applicant.AppUsers.Add(userSession);
             await _dbContext.SaveChangesAsync();
