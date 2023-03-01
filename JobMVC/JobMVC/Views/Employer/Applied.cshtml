@@ -119,12 +119,12 @@
 </body>
 
 <script>
-    let interviewBtn = document.querySelectorAll('.interviewBtn')
+    let buttons = document.querySelectorAll('.interviewBtn')
     let interviewDiv = document.getElementById('interviewDiv')
     let backInterviewDiv = document.getElementById('backInterviewDiv')
     let modalInterviewDiv = document.getElementById('modalInterviewDiv')
-    interviewBtn.forEach(function (i) {
-        i.addEventListener('click', function () {
+    for(let i=0;i<buttons.length;i++){
+        buttons[i].addEventListener("click",function(){
             interviewDiv.classList.remove('hidden')
 
             if (backInterviewDiv.classList.contains('opacity-0', 'ease-in', 'duration-200')) {
@@ -138,7 +138,7 @@
             modalInterviewDiv.classList.remove('opacity-0', 'ease-in', 'duration-200', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95')
             modalInterviewDiv.classList.add('ease-out', 'duration-300', 'opacity-100', 'translate-y-0', 'sm:scale-100')
         });
-    });
+    }
 
 </script>
 
